@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".StudentUI.registerStudent1">
+
+
+    <EditText
+        android:id="@+id/etv_Fname"
+        android:layout_width="347dp"
+        android:layout_height="54dp"
+
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:hint="@string/Fname"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="#7C7777"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="102dp" />
+
+    <EditText
+        android:id="@+id/etv_phone"
+        android:layout_width="347dp"
+        android:layout_height="54dp"
+
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:hint="@string/rphone"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColorHint="#7C7777"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <EditText
+        android:id="@+id/etv_remail"
+        android:layout_width="347dp"
+        android:layout_height="54dp"
+
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:hint="@string/remail"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textColorHint="#7C7777"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="254dp" />
+
+    <TextView
+        android:id="@+id/tvThemeR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textColor="@color/SplashScreenBackground"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <EditText
+        android:id="@+id/etv_schl"
+        android:layout_width="347dp"
+        android:layout_height="54dp"
+
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:hint="@string/rschool"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="#7C7777"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="328dp" />
+
+    <EditText
+        android:id="@+id/etv_sgrade"
+        android:layout_width="347dp"
+        android:layout_height="54dp"
+
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:hint="@string/rgrade"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="#7C7777"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="398dp" />
+
+    <EditText
+        android:id="@+id/etv_Alstrm"
+        android:layout_width="347dp"
+        android:layout_height="54dp"
+
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:hint="@string/rstream"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="#7C7777"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="475dp" />
+
+
+    <Button
+        android:id="@+id/etv_rbirthday"
+        style="?android:spinnerStyle"
+        android:layout_width="347dp"
+        android:layout_height="54dp"
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:foregroundTint="#1C1B1B"
+        android:hint="@string/emailHint"
+        android:inputType="date"
+        android:shadowColor="#AF9393"
+        android:text="@string/rbirthday"
+        android:textAlignment="center"
+        android:textColor="@color/grey"
+        android:textColorHighlight="@color/SplashScreenBackground"
+        android:textColorHint="#ACA7A7"
+        android:textColorLink="#000000"
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="563dp" />
+
+    <Button
+        android:id="@+id/btnReg"
+
+        android:layout_width="161dp"
+        android:layout_height="54dp"
+
+        android:backgroundTint="@color/SplashScreenBackground"
+        android:text="@string/btnregisterNext"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="631dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

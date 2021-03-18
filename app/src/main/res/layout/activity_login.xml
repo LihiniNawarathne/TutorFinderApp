@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="#FFFFFF"
+    tools:context=".MainUI.LoginActivity"
+    tools:ignore="MissingConstraints">
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="161dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/SplashScreenBackground"
+        android:text="@string/login_btn"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvhLink1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til1"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:textColorHint="#B9B8B8"
+        app:layout_constraintBottom_toTopOf="@+id/til2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+        <EditText
+            android:id="@+id/emailLogin"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:backgroundTint="@color/SplashScreenBackground"
+            android:ems="10"
+            android:foregroundTint="#1C1B1B"
+            android:hint="@string/emailHint"
+            android:inputType="textEmailAddress"
+            android:shadowColor="#AF9393"
+            android:textColor="#090808"
+            android:textColorHighlight="@color/SplashScreenBackground"
+            android:textColorHint="#ACA7A7"
+            android:textColorLink="#000000"
+            tools:ignore="MissingConstraints" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="264dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/til1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tutor1" />
+
+    <TextView
+        android:id="@+id/tvhLink1"
+        android:layout_width="366dp"
+        android:layout_height="72dp"
+        android:text="@string/hyperlinkForgot"
+        android:textAlignment="center"
+        android:textColorLink="@color/SplashScreenBackground"
+        app:layout_constraintBottom_toTopOf="@+id/tvhLink2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <TextView
+        android:id="@+id/tvhLink2"
+        android:layout_width="318dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="156dp"
+        android:text="@string/hyperlinkRegister"
+        android:textAlignment="center"
+        android:textColorLink="@color/SplashScreenBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvhLink1" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til2"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:textColorHint="#B9B8B8"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til1"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/grey">
+
+        <EditText
+            android:id="@+id/passwordLogin"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:backgroundTint="@color/SplashScreenBackground"
+            android:ems="10"
+            android:hint="@string/passwordHint"
+            android:inputType="textPassword"
+
+
+            android:textColorHighlight="@color/SplashScreenBackground"
+            android:textColorHint="#BAB7B7"
+            android:textColorLink="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="276dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

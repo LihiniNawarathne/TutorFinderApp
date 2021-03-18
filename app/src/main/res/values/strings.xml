@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Tutor Finder</string>
+    <string name="LoginText">Login</string>
+    <string name="emailHint">Enter Your Email</string>
+    <string name="emailL">Login</string>
+    <string name="passwordHint">Password</string>
+    <string name="passwordL">Password</string>
+    <string name="login_btn">LOGIN</string>
+
+    <string name="hyperlinkForgot"><a href="">Forgot your password?Reset here</a></string>
+    <string name="hyperlinkRegister"><a href="">Don\'t have an account?Register here</a></string>
+
+    <string name="selectRole">Are you a Teacher or Student?</string>
+    <string name="tutorimg">Tutor</string>
+    <string name="stdntimg">Student</string>
+
+    <string name="register">Sign Up</string>
+    <string name="Fname">Full Name</string>
+    <string name="rphone">Phone Number</string>
+    <string name="remail">Email Address</string>
+    <string name="rbirthday">Birth Day</string>
+    <string name="rschool">School</string>
+    <string name="rgrade">Grade</string>
+    <string name="rstream">A/L Stream</string>
+    <string name="btnregisterNext">Next</string>
+
+    <string name="regPassword">Create a Password</string>
+    <string name="regConfirmPassword">Confirm Password</string>
+    <string name="btnSignUp">Sign Up</string>
+
+    <string name="btmNavNotification">Notifi</string>
+    <string name="btmNavChat">Chat</string>
+    <string name="btmNavSearch">Search</string>
+    <string name="btmNavProfile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
