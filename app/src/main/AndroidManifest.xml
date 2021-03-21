@@ -16,17 +16,20 @@
         <activity android:name=".StudentUI.CourseOffersStudent" />
         <activity android:name=".StudentUI.ChatActivityStudent" />
         <activity android:name=".StudentUI.DashboardActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".StudentUI.resgisterStudent2" />
         <activity android:name=".StudentUI.registerStudent1" />
         <activity android:name=".MainUI.registerUserSelect" />
         <activity android:name=".MainUI.LoginActivity" />
-        <activity android:name=".MainUI.MainActivity"></activity>
+        <activity android:name=".MainUI.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>
