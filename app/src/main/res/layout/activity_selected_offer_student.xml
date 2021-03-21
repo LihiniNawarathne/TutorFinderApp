@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StudentUI.selectedOfferStudent">
+
+    <TextView
+        android:id="@+id/tvSubject1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="clip_vertical"
+        android:text="@string/SubjectName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSubjectname7"
+        app:layout_constraintTop_toBottomOf="@+id/tvoffermsg"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvtutor1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="clip_vertical"
+        android:text="@string/TutorName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvtutor5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvtutor5"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvtime1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:gravity="clip_vertical"
+        android:text="@string/TimeSc"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvtime6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvtime6"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvtime6"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="15dp"
+        android:gravity="clip_vertical"
+        android:text="@string/Time"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtutor5"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvSubjectname7"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:gravity="clip_vertical"
+        android:text="@string/Subject"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/tvoffermsg"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvtutor5"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="15dp"
+        android:gravity="clip_vertical"
+        android:text="@string/Tutor"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubjectname7"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvSubjectname5"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:gravity="clip_vertical"
+        android:text="@string/Subject"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/tvtime6"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvtutor3"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="15dp"
+        android:gravity="clip_vertical"
+        android:text="@string/Tutor"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubjectname5"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvtutor2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="clip_vertical"
+        android:text="@string/TutorName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvtutor3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvtutor3"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvtime5"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="clip_vertical"
+        android:text="@string/TimeSc"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvtime4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvtime4"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvtime4"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="15dp"
+        android:gravity="clip_vertical"
+        android:text="@string/Time"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtutor3"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvSubject2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="clip_vertical"
+        android:text="@string/SubjectName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvSubjectname5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSubjectname5"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvSubjectname1"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:gravity="clip_vertical"
+        android:text="@string/Subject"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/tvtime4"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvSubjectname3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="clip_vertical"
+        android:text="@string/SubjectName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvSubjectname1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSubjectname1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvtutor"
+        android:layout_width="110dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="15dp"
+        android:gravity="clip_vertical"
+        android:text="@string/Tutor"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubjectname1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="clip_vertical"
+        android:text="@string/TutorName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvtutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvtutor" />
+
+    <TextView
+        android:id="@+id/tvtime3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="clip_vertical"
+        android:text="@string/TimeSc"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvtime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvtime"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvtime"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="15dp"
+        android:gravity="clip_vertical"
+        android:text="@string/Time"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtutor"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="80dp"
+        android:gravity="clip_vertical"
+        android:text="@string/S1"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="106dp"
+        android:gravity="clip_vertical"
+        android:text="@string/S2"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="108dp"
+        android:gravity="clip_vertical"
+        android:text="@string/S3"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="349dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/TotalOffer"
+        android:textAlignment="center"
+        android:textColor="@color/ScreenBackground"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="159dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/ScreenBackground"
+        android:text="@string/joinbtn"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvmonths" />
+
+    <TextView
+        android:id="@+id/tvoffermsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/CourseOffer"
+        android:textColor="@color/Red"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvmonths"
+        android:layout_width="203dp"
+        android:layout_height="29dp"
+        android:text="@string/TotalOfferMonths"
+        android:textAlignment="center"
+        android:textColor="@color/ScreenBackground"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/ClassName"
+        android:textColor="@color/ScreenBackground"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtime" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
