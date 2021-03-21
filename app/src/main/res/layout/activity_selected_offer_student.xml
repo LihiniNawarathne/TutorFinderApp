@@ -310,7 +310,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/AdemailSendBtn"
         android:layout_width="159dp"
         android:layout_height="40dp"
         android:layout_marginStart="124dp"
