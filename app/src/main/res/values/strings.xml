@@ -8,7 +8,7 @@
     <string name="login_btn">LOGIN</string>
 
     <string name="hyperlinkForgot"><a href="">Forgot your password?Reset here</a></string>
-    <string name="hyperlinkRegister"><a href="">Don\'t have an account?Register here</a></string>
+    <string name="hyperlinkRegister"><a href="">Don't have an account?Register here</a></string>
 
     <string name="selectRole">Are you a Teacher or Student?</string>
     <string name="tutorimg">Tutor</string>
@@ -24,16 +24,76 @@
     <string name="rstream">A/L Stream</string>
     <string name="btnregisterNext">Next</string>
 
+    <string name="forgottonpassEmail">Enter your Email</string>
+    <string name="forgottonmsg">Please enter your email. we will send you a link to reset your password</string>
+
     <string name="regPassword">Create a Password</string>
     <string name="regConfirmPassword">Confirm Password</string>
     <string name="btnSignUp">Sign Up</string>
 
-    <string name="btmNavNotification">Notifi</string>
+    <string name="btmNavNotification">Notification</string>
     <string name="btmNavChat">Chat</string>
-    <string name="btmNavSearch">Search</string>
+    <string name="btmNavSearch">Search Class</string>
     <string name="btmNavProfile">Profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    <string name="chatgroups">Group Name</string>
+
+    <string name="groupCName">Group Name</string>
+    <string name="chathint">Enter Your Message</string>
+    <string name="lastMessage">Last Message</string>
+
+
+    <string name="notif">Notification</string>
+    <string name="notifTime">Time</string>
+
+
+    <string name="snameR">Student Name </string>
+    <string name="sbirthdayR">DD/MM/YEAR</string>
+    <string name="sphoneR">07********</string>
+    <string name="semailR">example@email.com</string>
+    <string name="sALstreamR">A/L Stream</string>
+    <string name="seditPro">Edit</string>
+    <string name="sdeletePro">Delete</string>
+
+
+    <string name="newClass">Join for a Class</string>
+    <string name="searchSubject">Enter Subject</string>
+    <string name="searchbtn">Search</string>
+
+    <string name="CourseOffers">Special offers for <br /> A/L Students</string>
+    <string name="offerMsg1">Select your A/L Stream</string>
+    <string name="clickforOffer">Click Here</string>
+    <string name="ScienceMathsStream">Science(Maths)</string>
+    <string name="ScienceBioStream">Science(Bio)</string>
+    <string name="CommerceStream">Commerce</string>
+    <string name="ArtStream">Art</string>
+
+    <string name="Subject">Subject</string>
+    <string name="Tutor">Tutor</string>
+    <string name="Time">Time</string>
+
+    <string name="SubjectName">Subject Name</string>
+    <string name="TutorName">Tutor Name</string>
+    <string name="TimeSc">Time</string>
+    <string name="S1">01).</string>
+    <string name="S2">02).</string>
+    <string name="S3">03).</string>
+    <string name="TotalOffer">Total Amount(for 6 months) : Amount</string>
+    <string name="TotalOfferMonths">Final Amount : Amount</string>
+    <string name="CourseOffer">Grab Your Chance</string>
+    <string name="ClassName">Class Name : Name</string>
+    <string name="joinbtn">Join</string>
+
+    <string name="classNameSlip">Enter Class Name</string>
+    <string name="slipactivity">Please make your full payment to the<br /> Bank Account : 123456789102 <br /> and Upload a screenshot here</string>
+    <string name="sendSlipbtn">Send</string>
+
+    <string name="SubjectNameResults">Maths</string>
+    <string name="ClassNameResults">Class Name    - Maths12A</string>
+    <string name="GradeResults">Grade   - 12</string>
+    <string name="TimeResults">Time     – Saturday 4.00-5.00PM</string>
+    <string name="AmountResults">Amount( for 6 months )     - Rs:5000.00</string>
+    <string name="TutorNameResults">Tutor   - P.Perera </string>
 
 </resources>

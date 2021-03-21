@@ -44,16 +44,14 @@
         android:id="@+id/til4"
         android:layout_width="317dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="391dp"
         android:textColorHint="#B9B8B8"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til3"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/grey"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="278dp">
 
         <EditText
             android:id="@+id/etvPasswordRegisterCon"
@@ -76,13 +74,14 @@
         android:id="@+id/btnSignUp"
         android:layout_width="161dp"
         android:layout_height="51dp"
-        android:layout_marginBottom="256dp"
-        android:background="@color/SplashScreenBackground"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/ScreenBackground"
         android:text="@string/btnSignUp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til4"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
