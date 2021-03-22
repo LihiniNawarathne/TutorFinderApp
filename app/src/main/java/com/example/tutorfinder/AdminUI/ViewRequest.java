@@ -6,6 +6,6 @@ public class ViewRequest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_request);
+        setContentView(R.layout.activity_admin_view_request);
     }
 }
