@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorFinder">
-        <activity android:name=".StudentUI.DashboardActivity"></activity>
+        <activity android:name=".TutorUI.TutorProfile"></activity>
+        <activity android:name=".TutorUI.StudentDetails" />
+        <activity android:name=".TutorUI.Selections" />
+        <activity android:name=".TutorUI.CreateClass" />
+        <activity android:name=".TutorUI.registerTutor" />
+        <activity android:name=".StudentUI.DashboardActivity" />
         <activity android:name=".StudentUI.resgisterStudent2" />
         <activity android:name=".StudentUI.registerStudent1" />
         <activity android:name=".MainUI.registerUserSelect" />
