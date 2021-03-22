@@ -30,9 +30,9 @@ public class DashboardActivity extends AppCompatActivity {
 
         //notification fragment transaction(default on start)
         actionBar.setTitle("Notification");//change action title
-        NotificationFragmentStudent nfragment = new NotificationFragmentStudent();//NotificationStudent nfragment = new NotificationStudent();
+        NotificationFragmentStudent fragment1 = new NotificationFragmentStudent();
         FragmentTransaction fr1 = getSupportFragmentManager().beginTransaction();
-        fr1.replace(R.id.navContent,nfragment,"");
+        fr1.replace(R.id.navContent,fragment1 ,"");
         fr1.commit() ;
 
     }
@@ -48,9 +48,9 @@ public class DashboardActivity extends AppCompatActivity {
                         case R.id.nav_notification:
                             //notification fragment transaction
                             actionBar.setTitle("Notification");//change action title
-                            NotificationFragmentStudent nfragment = new NotificationFragmentStudent();//NotificationStudent nfragment = new NotificationStudent();
+                            NotificationFragmentStudent fragment1 = new NotificationFragmentStudent();
                             FragmentTransaction fr1 = getSupportFragmentManager().beginTransaction();
-                            fr1.replace(R.id.navContent,nfragment,"");
+                            fr1.replace(R.id.navContent,fragment1 ,"");
                             fr1.commit() ;
 
                             return true;
@@ -59,27 +59,27 @@ public class DashboardActivity extends AppCompatActivity {
                             //chat fragment transaction
 
                             actionBar.setTitle("Chat");//change action title
-                            ChatFragmentStudent cfragment = new ChatFragmentStudent();
+                            ChatFragmentStudent fragment2 = new ChatFragmentStudent();
                             FragmentTransaction fr2 = getSupportFragmentManager().beginTransaction();
-                            fr2.replace(R.id.navContent,cfragment,"");
+                            fr2.replace(R.id.navContent,fragment2,"");
                             fr2.commit();
                             return true;
 
                         case R.id.nav_profile:
                             //profile fragment transaction
                             actionBar.setTitle("Profile");//change action title
-                            ChatFragmentStudent pfragment = new ChatFragmentStudent();
+                            ChatFragmentStudent fragment3 = new ChatFragmentStudent();
                             FragmentTransaction fr3 = getSupportFragmentManager().beginTransaction();
-                            fr3.replace(R.id.navContent,pfragment,"");
+                            fr3.replace(R.id.navContent,fragment3,"");
                             fr3.commit();
                             return true;
 
                         case R.id.nav_search:
                             //search fragment transaction
                             actionBar.setTitle("Search");//change action title
-                            ChatFragmentStudent sfragment = new ChatFragmentStudent();
+                            ChatFragmentStudent fragment4 = new ChatFragmentStudent();
                             FragmentTransaction fr4 = getSupportFragmentManager().beginTransaction();
-                            fr4.replace(R.id.navContent,sfragment,"");
+                            fr4.replace(R.id.navContent,fragment4,"");
                             fr4.commit();
                             return true;
 

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".StudentUI.uploadSlipImgStudent">
+
+    <TextView
+        android:id="@+id/tvSlipUpload"
+        android:layout_width="302dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="28dp"
+        android:foregroundGravity="center"
+        android:text="@string/slipactivity"
+        android:textAlignment="center"
+        android:textColor="@color/ScreenBackground"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <EditText
+        android:id="@+id/etvSlipUpload"
+        android:layout_width="305dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSlipUpload" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="54dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/etvSlipUpload"
+        app:layout_constraintTop_toTopOf="@+id/etvSlipUpload"
+        app:srcCompat="@drawable/ic_attachment_foreground" />
+
+    <Button
+        android:id="@+id/btnsendSlip"
+        android:layout_width="161dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/ScreenBackground"
+        android:gravity="center"
+        android:text="@string/sendSlipbtn"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etvSlipUpload" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="253dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="87dp"
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:hint="@string/classNameSlip"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

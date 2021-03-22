@@ -10,5 +10,9 @@
 
     <color name="grey">#7C7A7E</color>
     <color name="SplashScreenBackground">#7b39ff</color>
-
+    <color name="ScreenBackground">#7b39ff</color>
+    <color name="lightPurple">#C0A1FD</color>
+    <color name="Red">#D30808</color>
+    <color name="purpleBtn">#8821f0</color>
+    <color name="YellowBtn">#fef9af</color>
 </resources>
