@@ -10,6 +10,6 @@ public class Email extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_email);
+        setContentView(R.layout.activity_admin_email);
     }
 }
