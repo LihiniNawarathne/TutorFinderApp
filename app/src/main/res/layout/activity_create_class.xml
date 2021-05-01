@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="ck"
     tools:context=".TutorUI.CreateClass">
 
     <Button
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/textview_border"
         android:backgroundTint="@android:color/holo_purple"
-        android:text="ADD"
+        android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.535"
@@ -26,25 +25,27 @@
         android:layout_height="50dp"
         android:layout_marginStart="81dp"
         android:ems="10"
-        android:hint="Class Name"
+        android:hint="@string/class_name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.499"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextTextPersonName8"
         android:layout_width="274dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="Time"
+        android:hint="@string/time"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.591"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextTextPersonName6"
@@ -52,11 +53,12 @@
         android:layout_height="50dp"
         android:layout_marginStart="81dp"
         android:ems="10"
-        android:hint="Subject"
+        android:hint="@string/subject"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        android:autofillHints="" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -69,7 +71,8 @@
         app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/classroom" />
+        app:srcCompat="@drawable/classroom"
+        android:contentDescription="TODO" />
 
     <EditText
         android:id="@+id/editTextTextPersonName7"
@@ -81,6 +84,8 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6"
+        android:autofillHints=""
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
