@@ -4,105 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentUI.searchClass">
+    tools:context=".StudentUI.searchClass"
+    android:textColor="@color/white">
 
-    <LinearLayout
-        android:layout_width="417dp"
-        android:layout_height="304dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/textview_border"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvsearhchedSubject"
-        tools:ignore="MissingConstraints">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/row_classsearch_results"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="105dp"
-            android:layout_height="105dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="1dp"
-            app:cardCornerRadius="250dp">
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/groupclass" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/ClassNameResults"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/GradeResults"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/TimeResults"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/TutorNameResults"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/AmountResults"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/btnjoinGroup"
-            android:layout_width="161dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="110dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/textview_border"
-            android:backgroundTint="@color/ScreenBackground"
-            android:text="@string/joinbtn"
-            android:textColor="@color/white" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvsearhchedSubject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/SubjectNameResults"
-        android:textColor="@color/ScreenBackground"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

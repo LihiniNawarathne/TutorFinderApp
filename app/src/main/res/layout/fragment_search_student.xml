@@ -6,47 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".StudentUI.SearchFragmentStudent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="263dp"
-        android:layout_marginTop="350dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvGrabOffer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="clip_horizontal|center"
-                android:text="@string/CourseOffers"
-                android:textAlignment="center"
-                android:textColor="@color/Red"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btnGrabOffer"
-                android:layout_width="161dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/textview_border"
-                android:backgroundTint="@color/ScreenBackground"
-                android:text="@string/clickforOffer"
-                android:textColor="@color/white" />
-
-        </LinearLayout>
-    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layout1"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
+
+
+
 
         <TextView
             android:id="@+id/tvJoinClassTheme"
@@ -58,24 +28,23 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/etvSearchSubject"
-            android:layout_width="371dp"
-            android:layout_height="58dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/textview_border"
-            android:ems="10"
+        <Spinner
+            android:id="@+id/SubjectSpinner"
+            android:autofillHints="@string/searchSubject"
             android:gravity="center"
-            android:inputType="textPersonName"
-            android:text="@string/searchSubject"
-            android:textColorHint="@color/grey" />
+            android:textAlignment="center"
+            android:paddingLeft="70dp"
+            android:layout_width="300dp"
+            android:layout_height="58dp"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/textview_border"/>
+
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="69dp"
+            android:layout_width="59dp"
             android:layout_height="58dp"
-            android:layout_marginStart="-150dp"
+            android:layout_marginStart="-115dp"
             android:layout_marginTop="-59dp"
             android:src="@drawable/ic_search_foreground" />
 
@@ -91,5 +60,30 @@
             android:text="@string/searchbtn"
             android:textColor="@color/white" />
 
+        <TextView
+            android:id="@+id/tvGrabOffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="clip_horizontal|center"
+            android:text="@string/CourseOffers"
+            android:textAlignment="center"
+            android:textColor="@color/Red"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnGrabOffer"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textview_border"
+            android:backgroundTint="@color/ScreenBackground"
+            android:text="@string/clickforOffer"
+            android:textColor="@color/white" />
+
+
+
     </LinearLayout>
+
 </FrameLayout>

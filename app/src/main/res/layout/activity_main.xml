@@ -7,7 +7,7 @@
     android:background="@color/SplashScreenBackground"
     tools:context=".MainUI.MainActivity">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView2"
         android:layout_width="188dp"
         android:layout_height="127dp"
@@ -16,8 +16,7 @@
         app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403"
-        app:srcCompat="@drawable/tutor1" />
+        android:src="@drawable/tutor1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
