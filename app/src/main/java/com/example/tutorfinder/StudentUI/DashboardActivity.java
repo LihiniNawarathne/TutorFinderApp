@@ -10,10 +10,15 @@ import android.view.MenuItem;
 
 import com.example.tutorfinder.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class DashboardActivity extends AppCompatActivity {
 
     ActionBar actionBar;
+
+    //firebase auth
+    FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,18 +27,20 @@ public class DashboardActivity extends AppCompatActivity {
 
         //actionbar and it's title
         actionBar = getSupportActionBar();
-        actionBar.setTitle("Notifications");
+       // actionBar.setTitle("Notifications");
+
+        mAuth = FirebaseAuth.getInstance();
 
         //bottom navigation:show menu
         BottomNavigationView navigationViewStudent = findViewById(R.id.bottom_navigation);
         navigationViewStudent.setOnNavigationItemSelectedListener(selectedListener);
 
-        //notification fragment transaction(default on start)
-        actionBar.setTitle("Notification");//change action title
-        NotificationFragmentStudent fragment1 = new NotificationFragmentStudent();
-        FragmentTransaction fr1 = getSupportFragmentManager().beginTransaction();
-        fr1.replace(R.id.navContent,fragment1 ,"");
-        fr1.commit() ;
+
+        actionBar.setTitle("My Profile");//change action title
+        ProfileFragmentStudent fragment3 = new ProfileFragmentStudent();
+        FragmentTransaction fr3 = getSupportFragmentManager().beginTransaction();
+        fr3.replace(R.id.navContent,fragment3,"");
+        fr3.commit();
 
     }
 
@@ -67,8 +74,8 @@ public class DashboardActivity extends AppCompatActivity {
 
                         case R.id.nav_profile:
                             //profile fragment transaction
-                            actionBar.setTitle("Profile");//change action title
-                            ChatFragmentStudent fragment3 = new ChatFragmentStudent();
+                            actionBar.setTitle("My Profile");//change action title
+                            ProfileFragmentStudent fragment3 = new ProfileFragmentStudent();
                             FragmentTransaction fr3 = getSupportFragmentManager().beginTransaction();
                             fr3.replace(R.id.navContent,fragment3,"");
                             fr3.commit();
@@ -77,7 +84,7 @@ public class DashboardActivity extends AppCompatActivity {
                         case R.id.nav_search:
                             //search fragment transaction
                             actionBar.setTitle("Search");//change action title
-                            ChatFragmentStudent fragment4 = new ChatFragmentStudent();
+                            SearchFragmentStudent fragment4 = new SearchFragmentStudent();
                             FragmentTransaction fr4 = getSupportFragmentManager().beginTransaction();
                             fr4.replace(R.id.navContent,fragment4,"");
                             fr4.commit();

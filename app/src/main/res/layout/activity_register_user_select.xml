@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRole"
-        app:srcCompat="@drawable/tutor" />
+        android:src="@drawable/tutor" />
 
     <TextView
         android:id="@+id/tvStudentRole"
@@ -58,7 +58,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTutorRole"
         app:layout_constraintVertical_bias="0.809"
-        app:srcCompat="@drawable/student" />
+        android:src="@drawable/student" />
 
     <TextView
         android:id="@+id/tvRole"

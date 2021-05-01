@@ -1,12 +1,17 @@
 package com.example.tutorfinder.StudentUI;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.tutorfinder.R;
@@ -15,92 +20,79 @@ import java.util.Calendar;
 
 public class registerStudent1 extends AppCompatActivity {
 
-    private DatePickerDialog datePickerDialog;
-    private TextView dateB;
+
+     EditText Fname,phone,remail,schl,NIC,Alstrm;
+     Button btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_student1);
-        initDatePicker();
-        dateB = findViewById(R.id.etv_rbirthday);
-        dateB.setText(getTodaysDate());
-    }
 
-    private String getTodaysDate()
-    {
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        month = month + 1;
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        return makeDateString(day, month, year);
-    }
+        //set action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Sign Up");
 
-    private void initDatePicker()
-    {
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener()
-        {
+        //enable back button
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+
+        Fname = findViewById(R.id.etv_Fname);
+        phone = findViewById(R.id.etv_phone);
+        remail = findViewById(R.id.etv_remail);
+        schl = findViewById(R.id.etv_schl);
+        NIC = findViewById(R.id.etv_sNIC);
+        Alstrm= findViewById(R.id.etv_Alstrm);
+        btn = findViewById(R.id.btnReg);
+
+        //navigate to Student SIgnUp2 page
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day)
-            {
-                month = month + 1;
-                String date = makeDateString(day, month, year);
-                dateB.setText(date);
+            public void onClick(View v) {
+
+                String sFname= Fname.getText().toString().trim();
+                String sphone= phone.getText().toString().trim();
+                String sremail= remail.getText().toString().trim();
+                String sschl= schl.getText().toString().trim();
+                String sNIC= NIC.getText().toString().trim();
+                String sAlstrm= Alstrm.getText().toString().trim();
+
+
+                //validate
+                if(!Patterns.EMAIL_ADDRESS.matcher(sremail).matches()){
+                    remail.setError("Invalid Email");
+                    remail.setFocusable(true);
+                }
+                else if(!Patterns.PHONE.matcher(sphone).matches()){
+                    phone.setError("Invalid Phone");
+                    phone.setFocusable(true);
+                }
+                else {
+                    Intent intent = new Intent(registerStudent1.this, registerStudent2.class);
+                    intent.putExtra("Fname", sFname);
+                    intent.putExtra("phone", sphone);
+                    intent.putExtra("remail", sremail);
+                    intent.putExtra("schl", sschl);
+                    intent.putExtra("NIC", sNIC);
+                    intent.putExtra("Alstrm", sAlstrm);
+
+                    startActivity(intent);
+                }
             }
-        };
+        });
 
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-
-        int style = AlertDialog.THEME_HOLO_LIGHT;
-
-        datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
-        //datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
 
     }
 
-    private String makeDateString(int day, int month, int year)
-    {
-        return getMonthFormat(month) + " " + day + " " + year;
+    @Override
+    public boolean onSupportNavigateUp() {
+        //navigate to previous activity
+        onBackPressed();
+        return super.onSupportNavigateUp();
     }
 
-    private String getMonthFormat(int month)
-    {
-        if(month == 1)
-            return "JAN";
-        if(month == 2)
-            return "FEB";
-        if(month == 3)
-            return "MAR";
-        if(month == 4)
-            return "APR";
-        if(month == 5)
-            return "MAY";
-        if(month == 6)
-            return "JUN";
-        if(month == 7)
-            return "JUL";
-        if(month == 8)
-            return "AUG";
-        if(month == 9)
-            return "SEP";
-        if(month == 10)
-            return "OCT";
-        if(month == 11)
-            return "NOV";
-        if(month == 12)
-            return "DEC";
 
-        //default should never happen
-        return "JAN";
-    }
-
-    public void openDatePicker(View view)
-    {
-        datePickerDialog.show();
-    }
 }

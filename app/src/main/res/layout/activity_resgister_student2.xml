@@ -4,36 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentUI.resgisterStudent2">
+    tools:context=".StudentUI.registerStudent2">
 
+    <TextView
+        android:id="@+id/tvThemeR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="152dp"
+        android:text="@string/rbirthday"
+        android:textColor="@color/SplashScreenBackground"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/til3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/dateB"
+        style="?android:spinnerStyle"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="openDatePicker"
+        android:text="@string/rbirthday"
+        android:textColor="@color/SplashScreenBackground"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvThemeR" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til3"
-        android:layout_width="317dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="172dp"
-        android:layout_marginBottom="44dp"
-        android:gravity="center|center_vertical"
-        android:textAlignment="center"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/textview_border"
         android:textColorHint="#B9B8B8"
         app:layout_constraintBottom_toTopOf="@+id/til4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvThemeR"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/grey"
-        tools:ignore="MissingConstraints">
+        app:passwordToggleTint="@color/grey">
 
         <EditText
             android:id="@+id/etvPasswordRegister"
-            android:layout_width="match_parent"
+            android:layout_width="290dp"
             android:layout_height="51dp"
-            android:background="@drawable/textview_border"
+            android:layout_marginLeft="10dp"
+            android:autofillHints=""
             android:ems="10"
-            android:gravity="center|clip_vertical|center_horizontal"
             android:hint="@string/regPassword"
             android:inputType="textPassword"
-            android:textAlignment="center"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="292dp" />
@@ -42,43 +72,46 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til4"
-        android:layout_width="317dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/textview_border"
         android:textColorHint="#B9B8B8"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til3"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/grey"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="278dp">
+        app:passwordToggleTint="@color/grey">
 
         <EditText
             android:id="@+id/etvPasswordRegisterCon"
-            android:layout_width="match_parent"
+            android:layout_width="290dp"
             android:layout_height="51dp"
-            android:background="@drawable/textview_border"
+            android:layout_marginLeft="10dp"
+            android:autofillHints=""
             android:ems="10"
-            android:gravity="center|clip_vertical|center_horizontal"
+            android:foregroundTint="#1C1B1B"
             android:hint="@string/regConfirmPassword"
             android:inputType="textPassword"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="358dp" />
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="292dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="161dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="84dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="134dp"
         android:background="@drawable/textview_border"
         android:backgroundTint="@color/ScreenBackground"
         android:text="@string/btnSignUp"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til4"

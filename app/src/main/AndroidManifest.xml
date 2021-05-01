@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tutorfinder">
+    <!-- Add internet permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,16 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorFinder">
-        <activity android:name=".MainUI.ForgotPasswordActivity"></activity>
-        <activity android:name=".StudentUI.searchClass" />
+        <activity android:name=".StudentUI.searchClass"></activity>
+        <activity android:name=".StudentUI.UpdateDetailsStudent" />
+        <activity android:name=".MainUI.ForgotPasswordActivity" />
         <activity android:name=".StudentUI.uploadSlipImgStudent" />
         <activity android:name=".StudentUI.selectedOfferStudent" />
         <activity android:name=".StudentUI.CourseOffersStudent" />
         <activity android:name=".StudentUI.ChatActivityStudent" />
-        <activity android:name=".StudentUI.DashboardActivity">
-
-        </activity>
-        <activity android:name=".StudentUI.resgisterStudent2" />
+        <activity android:name=".StudentUI.DashboardActivity" />
+        <activity android:name=".StudentUI.registerStudent2" />
         <activity android:name=".StudentUI.registerStudent1" />
         <activity android:name=".MainUI.registerUserSelect" />
         <activity android:name=".MainUI.LoginActivity" />
@@ -28,7 +29,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

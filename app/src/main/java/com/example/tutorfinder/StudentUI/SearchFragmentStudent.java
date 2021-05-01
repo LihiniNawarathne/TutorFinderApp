@@ -1,66 +1,97 @@
 package com.example.tutorfinder.StudentUI;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.tutorfinder.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SearchFragmentStudent#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class SearchFragmentStudent extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public SearchFragmentStudent() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SearchFragmentStudent.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SearchFragmentStudent newInstance(String param1, String param2) {
-        SearchFragmentStudent fragment = new SearchFragmentStudent();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    Button btnSearch,btnCLICk;
+    Spinner spinner;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search_student, container, false);
+        View view = inflater.inflate(R.layout.fragment_search_student, container, false);
+
+
+        btnSearch = view.findViewById(R.id.btnSearchSubject);
+        btnCLICk = view.findViewById(R.id.btnGrabOffer);
+        spinner =view.findViewById(R.id.SubjectSpinner);
+
+        //set spinner
+        List<String> list = new ArrayList<>();
+
+        list.add("Mathemathics");
+        list.add("Commerce");
+        list.add("Art");
+
+        ArrayAdapter<String> dataAdapter =new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item,list);
+        spinner.setAdapter(dataAdapter);
+
+
+        //'Search' Button pressed
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //get spinner value
+                String subjectName  = spinner.getSelectedItem().toString();
+
+//                //send data to FragmentSearchResultsStudent
+//                Bundle bundle = new Bundle();
+//                bundle.putString("subjectName",subjectName.getText().toString() );
+//
+//
+//
+//                FragmentSearchResultsStudent fragmentSearchResultsStudent=new FragmentSearchResultsStudent();
+//                fragmentSearchResultsStudent.setArguments(bundle);
+//                getFragmentManager().beginTransaction().replace(android.R.id.content,fragmentSearchResultsStudent).remove(SearchFragmentStudent.this).commit();
+
+
+                Intent intent = new Intent(getActivity(), searchClass.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("subjectName",subjectName );
+                intent.putExtras(bundle);
+                startActivity(intent);
+
+            }
+        });
+
+
+        //'Click' Button pressed
+        btnCLICk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //redirect to Courser Offer select page
+                Intent intent = new Intent(getActivity(), CourseOffersStudent.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+        return view;
     }
+
+
 }
