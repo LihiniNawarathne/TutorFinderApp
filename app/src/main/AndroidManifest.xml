@@ -32,14 +32,14 @@
         <activity android:name=".StudentUI.registerStudent1" />
         <activity android:name=".MainUI.registerUserSelect" />
         <activity android:name=".MainUI.LoginActivity" />
-        <activity android:name=".MainUI.MainActivity" />
+        <activity android:name=".MainUI.MainActivity" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
+        </activity>
         <activity android:name=".AdminUI.admin_view_tutors" />
         <activity android:name=".AdminUI.admin_view_students" />
         <activity android:name=".AdminUI.UserDetail" />

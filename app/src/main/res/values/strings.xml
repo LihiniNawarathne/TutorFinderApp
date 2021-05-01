@@ -117,7 +117,6 @@
     <string name="phoneno">Phone no</string>
     <string name="email">Email</string>
     <string name="dob">Date of Birth</string>
-    <string name="subject">Subject</string>
     <string name="degree">Degree</string>
     <string name="qual">Qualifications</string>
 
@@ -132,7 +131,7 @@
     <string name="Grade">Grade</string>
     <string name="classID">ClassID</string>
     <string name="bankSlip">BankSlip</string>
-    <string name="add">Add</string>
+    <string name="add">ADD</string>
 
     <string name="status">Status</string>
     <string name="deg">Degree</string>
@@ -150,5 +149,8 @@
     <string name="btnpay">Payment Details</string>
     <string name="btnRequest">View Request</string>
     <string name="btnStuTotuors">User Details</string>
+    <string name="subject">Subject</string>
+    <string name="time">Time</string>
+    <string name="class_name">Class Name</string>
 
 </resources>

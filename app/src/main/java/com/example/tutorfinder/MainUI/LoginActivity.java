@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tutorfinder.AdminUI.Admin_MainActivity;
 import com.example.tutorfinder.R;
 import com.example.tutorfinder.StudentUI.DashboardActivity;
 import com.example.tutorfinder.StudentUI.ProfileFragmentStudent;
@@ -181,6 +182,9 @@ public class LoginActivity extends AppCompatActivity {
 
                                                             else{
 
+                                                             //else the user is admin
+                                                                Toast.makeText(LoginActivity.this, "Hello Admin", Toast.LENGTH_SHORT).show();
+                                                                startActivity(new Intent(LoginActivity.this, Admin_MainActivity.class));
 
 
                                                             }

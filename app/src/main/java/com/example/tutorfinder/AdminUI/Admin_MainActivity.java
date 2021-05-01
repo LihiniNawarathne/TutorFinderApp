@@ -14,11 +14,11 @@ public class Admin_MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_admin_main);
 
-        BtnPaymetDetails = findViewById(R.id.btnPaymentMain);
+        BtnPaymetDetails =  findViewById(R.id.btnPaymentMain);
         BtnViewTRequest = findViewById(R.id.btnViewrequest);
-        BtnUserDetails = findViewById(R.id.BtnStuTutors);
+        BtnUserDetails =  findViewById(R.id.BtnStuTutors);
 
         BtnPaymetDetails.setOnClickListener(new View.OnClickListener() {
             @Override
