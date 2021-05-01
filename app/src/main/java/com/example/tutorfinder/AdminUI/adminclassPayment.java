@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.tutorfinder.R;
 
-public class UserDetails extends AppCompatActivity {
+public class adminclassPayment extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_user_details);
+        setContentView(R.layout.activity_admin_class_payment);
     }
 }

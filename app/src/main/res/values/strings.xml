@@ -140,4 +140,7 @@
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="msg">Message</string>
+    <string name="btnpay">Payment Details</string>
+    <string name="btnRequest">View Request</string>
+    <string name="btnStuTotuors">User Details</string>
 </resources>
