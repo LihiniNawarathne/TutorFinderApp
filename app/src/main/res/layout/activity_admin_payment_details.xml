@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+
+    tools:context=".AdminUI.PaymentDetails">
+
+
+    <ImageView
+        android:id="@+id/Adartimg"
+        android:layout_width="148dp"
+        android:layout_height="56dp"
+        android:src="@drawable/arts"
+        app:layout_constraintBottom_toTopOf="@+id/Adcommerceimg"
+        app:layout_constraintEnd_toStartOf="@+id/AdartBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Admathsimg" />
+
+    <ImageView
+        android:id="@+id/Adcommerceimg"
+        android:layout_width="174dp"
+        android:layout_height="77dp"
+        android:src="@drawable/commerce"
+        app:layout_constraintBottom_toTopOf="@+id/Adtecimg"
+        app:layout_constraintEnd_toStartOf="@+id/AdcomBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Adartimg" />
+
+    <ImageView
+        android:id="@+id/Admathsimg"
+        android:layout_width="156dp"
+        android:layout_height="65dp"
+        android:src="@drawable/maths"
+        app:layout_constraintBottom_toTopOf="@+id/Adartimg"
+        app:layout_constraintEnd_toStartOf="@+id/AdmathsBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Adscienceimg" />
+
+    <ImageView
+        android:id="@+id/Adtecimg"
+        android:layout_width="179dp"
+        android:layout_height="77dp"
+        android:src="@drawable/tec"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/AdtecBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Adcommerceimg" />
+
+    <Button
+        android:id="@+id/AdscBtn"
+        android:layout_width="137dp"
+        android:layout_height="62dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/purpleBtn"
+        android:text="@string/btnsc"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/AdmathsBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Adscienceimg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Adscienceimg"
+        android:layout_width="148dp"
+        android:layout_height="73dp"
+        android:src="@drawable/science"
+        app:layout_constraintBottom_toTopOf="@+id/Admathsimg"
+        app:layout_constraintEnd_toStartOf="@+id/AdscBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/AdcomBtn"
+        android:layout_width="137dp"
+        android:layout_height="62dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/purpleBtn"
+        android:text="@string/btncom"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/AdtecBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Adcommerceimg"
+        app:layout_constraintTop_toBottomOf="@+id/AdartBtn" />
+
+    <Button
+        android:id="@+id/AdartBtn"
+        android:layout_width="137dp"
+        android:layout_height="62dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/purpleBtn"
+        android:text="@string/btnarts"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/AdcomBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Adartimg"
+        app:layout_constraintTop_toBottomOf="@+id/AdmathsBtn" />
+
+    <Button
+        android:id="@+id/AdmathsBtn"
+        android:layout_width="137dp"
+        android:layout_height="62dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/purpleBtn"
+        android:text="@string/btnmaths"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/AdartBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Admathsimg"
+        app:layout_constraintTop_toBottomOf="@+id/AdscBtn" />
+
+    <Button
+        android:id="@+id/AdtecBtn"
+        android:layout_width="137dp"
+        android:layout_height="62dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/purpleBtn"
+        android:text="@string/btntec"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Adtecimg"
+        app:layout_constraintTop_toBottomOf="@+id/AdcomBtn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

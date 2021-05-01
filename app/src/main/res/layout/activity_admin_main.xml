@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminUI.Admin_MainActivity"
+    android:background="@drawable/main_gradient">
+
+    <Button
+        android:id="@+id/btnPaymentMain"
+        android:layout_width="219dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginBottom="110dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/purpleBtn"
+        android:text="@string/btnpay"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnViewrequest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnViewrequest"
+        android:layout_width="219dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="96dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/purpleBtn"
+        android:text="@string/btnRequest"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/BtnStuTutors"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPaymentMain" />
+
+    <Button
+        android:id="@+id/BtnStuTutors"
+        android:layout_width="219dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="179dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/purpleBtn"
+        android:text="@string/btnStuTotuors"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewrequest" />
+</androidx.constraintlayout.widget.ConstraintLayout>
