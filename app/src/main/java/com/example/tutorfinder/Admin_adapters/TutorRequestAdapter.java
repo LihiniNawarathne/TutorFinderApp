@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -111,6 +112,8 @@ public class TutorRequestAdapter<context> extends RecyclerView.Adapter<TutorRequ
                     //after cliking the accept button this request form will be deleted in the request tutors table
                     ref = db.getReference("TutorRequest");
                     ref.child(tutors.getNIC()).removeValue();
+
+                    //Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
                 }
             });
             //button decline this button use to when admin decline the request this form also deleted in the table
