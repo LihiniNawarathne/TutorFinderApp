@@ -40,6 +40,8 @@ import java.util.regex.Pattern;
 
 public class registerStudent2 extends AppCompatActivity {
 
+    FirebaseDatabase rootNode;
+
     DatePickerDialog datePickerDialog;
     Button dateButton;
 
@@ -144,13 +146,13 @@ public class registerStudent2 extends AppCompatActivity {
 
 
         //connecting to firebase database
-        FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
+        rootNode = FirebaseDatabase.getInstance();
         //pointing to the table/reference
         reference = rootNode.getReference("Student");
 
         String proimg ="";
 
-        StudentHelperClass addNewStudent = new StudentHelperClass(Name,Phone,Email,School,NIC,ALStream,DOB,proimg);
+        StudentHelperClass addNewStudent = new StudentHelperClass(Name,Phone,Email,School,NIC,ALStream,DOB,proimg,mAuth.getUid());
         reference.child(NIC).setValue(addNewStudent).addOnCompleteListener(this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

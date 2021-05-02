@@ -2,9 +2,9 @@ package com.example.tutorfinder.Database;
 
 public class StudentHelperClass {
 
-    String Name,Phone,Email,School,NIC,ALStream,DOB,Password,proimg;
+    String Name,Phone,Email,School,NIC,ALStream,DOB,Password,proimg,uid;
 
-    public StudentHelperClass(String name, String phone, String email, String school, String nic, String ALStream, String DOB,String proimg) {
+    public StudentHelperClass(String name, String phone, String email, String school, String nic, String ALStream, String DOB,String proimg,String uid) {
         Name = name;
         Phone = phone;
         Email = email;
@@ -13,6 +13,7 @@ public class StudentHelperClass {
         this.proimg=proimg;
         this.ALStream = ALStream;
         this.DOB = DOB;
+        this.uid=uid;
        // Password = password;
     }
 
@@ -87,6 +88,15 @@ public class StudentHelperClass {
     public void setProimg(String proimg) {
         this.proimg = proimg;
     }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
 
     //    public String getPassword() {
 //        return Password;

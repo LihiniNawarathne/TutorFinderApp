@@ -20,6 +20,7 @@ import com.example.tutorfinder.StudentUI.DashboardActivity;
 import com.example.tutorfinder.StudentUI.ProfileFragmentStudent;
 import com.example.tutorfinder.StudentUI.registerStudent1;
 import com.example.tutorfinder.StudentUI.registerStudent2;
+import com.example.tutorfinder.TutorUI.CreateClass;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -178,6 +179,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                                                 Log.d("TAG","Tutor Login");
                                                                 Toast.makeText(LoginActivity.this, "Tutor Exists", Toast.LENGTH_SHORT).show();
+                                                                startActivity(new Intent(LoginActivity.this, CreateClass.class));
                                                             }
 
                                                             else{
