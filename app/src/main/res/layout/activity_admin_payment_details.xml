@@ -11,9 +11,9 @@
 
     <ImageView
         android:id="@+id/Adartimg"
-        android:layout_width="148dp"
-        android:layout_height="56dp"
-        android:src="@drawable/arts"
+        android:layout_width="155dp"
+        android:layout_height="110dp"
+        android:src="@drawable/arts_collage"
         app:layout_constraintBottom_toTopOf="@+id/Adcommerceimg"
         app:layout_constraintEnd_toStartOf="@+id/AdartBtn"
         app:layout_constraintHorizontal_bias="0.5"
@@ -22,9 +22,9 @@
 
     <ImageView
         android:id="@+id/Adcommerceimg"
-        android:layout_width="174dp"
-        android:layout_height="77dp"
-        android:src="@drawable/commerce"
+        android:layout_width="155dp"
+        android:layout_height="110dp"
+        android:src="@drawable/com"
         app:layout_constraintBottom_toTopOf="@+id/Adtecimg"
         app:layout_constraintEnd_toStartOf="@+id/AdcomBtn"
         app:layout_constraintHorizontal_bias="0.5"
@@ -33,9 +33,9 @@
 
     <ImageView
         android:id="@+id/Admathsimg"
-        android:layout_width="156dp"
-        android:layout_height="65dp"
-        android:src="@drawable/maths"
+        android:layout_width="155dp"
+        android:layout_height="110dp"
+        android:src="@drawable/cm"
         app:layout_constraintBottom_toTopOf="@+id/Adartimg"
         app:layout_constraintEnd_toStartOf="@+id/AdmathsBtn"
         app:layout_constraintHorizontal_bias="0.5"
@@ -44,9 +44,9 @@
 
     <ImageView
         android:id="@+id/Adtecimg"
-        android:layout_width="179dp"
-        android:layout_height="77dp"
-        android:src="@drawable/tec"
+        android:layout_width="155dp"
+        android:layout_height="110dp"
+        android:src="@drawable/tsub"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/AdtecBtn"
         app:layout_constraintHorizontal_bias="0.5"
@@ -55,7 +55,7 @@
 
     <Button
         android:id="@+id/AdscBtn"
-        android:layout_width="137dp"
+        android:layout_width="155dp"
         android:layout_height="62dp"
         android:background="@drawable/textview_border"
         android:backgroundTint="@color/purpleBtn"
@@ -69,9 +69,9 @@
 
     <ImageView
         android:id="@+id/Adscienceimg"
-        android:layout_width="148dp"
-        android:layout_height="73dp"
-        android:src="@drawable/science"
+        android:layout_width="155dp"
+        android:layout_height="110dp"
+        android:src="@drawable/biology"
         app:layout_constraintBottom_toTopOf="@+id/Admathsimg"
         app:layout_constraintEnd_toStartOf="@+id/AdscBtn"
         app:layout_constraintHorizontal_bias="0.5"
@@ -80,7 +80,7 @@
 
     <Button
         android:id="@+id/AdcomBtn"
-        android:layout_width="137dp"
+        android:layout_width="155dp"
         android:layout_height="62dp"
         android:background="@drawable/textview_border"
         android:backgroundTint="@color/purpleBtn"
@@ -94,7 +94,7 @@
 
     <Button
         android:id="@+id/AdartBtn"
-        android:layout_width="137dp"
+        android:layout_width="155dp"
         android:layout_height="62dp"
         android:background="@drawable/textview_border"
         android:backgroundTint="@color/purpleBtn"
@@ -108,7 +108,7 @@
 
     <Button
         android:id="@+id/AdmathsBtn"
-        android:layout_width="137dp"
+        android:layout_width="155dp"
         android:layout_height="62dp"
         android:background="@drawable/textview_border"
         android:backgroundTint="@color/purpleBtn"
@@ -122,7 +122,7 @@
 
     <Button
         android:id="@+id/AdtecBtn"
-        android:layout_width="137dp"
+        android:layout_width="155dp"
         android:layout_height="62dp"
         android:background="@drawable/textview_border"
         android:backgroundTint="@color/purpleBtn"
