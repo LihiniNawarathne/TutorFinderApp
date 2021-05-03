@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tutorfinder.Database.GroupMessageModel;
 import com.example.tutorfinder.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +28,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -37,6 +40,8 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
     FirebaseAuth mAuth;
     DatabaseReference reference;
     FirebaseUser user;
+
+    String name;
 
     final int MSG_TYPE_LEFT=0;
     final int MSG_TYPE_RIGHT=1;
@@ -55,7 +60,6 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
     public AdapterChatMessages.MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         //inflate row_chats
-
         if(viewType==MSG_TYPE_RIGHT) {
             View view = LayoutInflater.from(context).inflate(R.layout.row_groupchat_right, parent, false);
             return new AdapterChatMessages.MyHolder(view);
@@ -69,10 +73,8 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
 
     @Override
     public void onBindViewHolder(@NonNull AdapterChatMessages.MyHolder holder, int position) {
-
-        GroupMessageModel model = messages.get(position);
-
         //get data
+        GroupMessageModel model = messages.get(position);
         String message=model.getMessage();
         String sender=model.getSender();
         String timestamp=model.getTimestamp();
@@ -80,32 +82,20 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
         //get Time
         Calendar cal = Calendar.getInstance(Locale.ENGLISH);
         cal.setTimeInMillis(Long.parseLong(timestamp));
-//        String dateTime = DateFormat.format("dd/MM/yyyy hh:mm aa",cal).toString();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss.SS");
-        String strDate = sdf.format(cal.getTime());
+        SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy   HH:mm");
+        String time = sdf.format(cal.getTime());
 
 
         //set data
         holder.tvmessage.setText(message);
-        holder.tvtime.setText(strDate);
+        holder.tvtime.setText(time);
         
         //set user name
         setSenderName(model,holder);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(context, ""+sender, Toast.LENGTH_SHORT).show();
-
-//                Intent intent = new Intent(context, ChatActivityStudent.class);
-//                intent.putExtra("chatName", chatName);
-//
-//                context.startActivity(intent);
-            }
-        });
     }
 
+    //get sender name and set it
     private void setSenderName(GroupMessageModel model, MyHolder holder) {
 
         //get info using uid
@@ -115,7 +105,7 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds:snapshot.getChildren()){
-                    String name =""+ds.child("name").getValue();
+                    name =""+ds.child("name").getValue();
 
                     holder.tvname.setText(name);
                 }
@@ -128,6 +118,7 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
         });
 
     }
+
 
     @Override
     public int getItemViewType(int position) {
@@ -146,7 +137,7 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
 
     class MyHolder extends RecyclerView.ViewHolder{
 
-        TextView tvname,tvmessage,tvtime;
+        TextView tvname ,tvmessage,tvtime;
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);

@@ -50,7 +50,6 @@ public class ChatFragmentStudent extends Fragment {
         user = mAuth.getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("ChatGroups");
 
-        Query checkUserExistence = reference.child("participents").orderByChild("uid").equalTo(user.getUid());
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -58,12 +57,15 @@ public class ChatFragmentStudent extends Fragment {
                 //clearing previous info
                 groupList.clear();
                 for(DataSnapshot ds:snapshot.getChildren()){
-                    ChatHelperClass modelclass=ds.getValue(ChatHelperClass.class);
+                    //check wheteher the user is in the participant list
+                    if(ds.child("participents").child(user.getUid()).exists()) {
+                        ChatHelperClass modelclass = ds.getValue(ChatHelperClass.class);
 
-                    groupList.add(modelclass);
-                    adapterGroups= new AdapterChatGroupsList(getActivity(),groupList);
+                        groupList.add(modelclass);
+                        adapterGroups = new AdapterChatGroupsList(getActivity(), groupList);
 
-                    recyclerView.setAdapter(adapterGroups);
+                        recyclerView.setAdapter(adapterGroups);
+                    }
 
                 }
             }

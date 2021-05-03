@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -15,16 +16,21 @@ import android.widget.Toast;
 
 import com.example.tutorfinder.Database.ClassHelperClass;
 import com.example.tutorfinder.Database.GroupMessageModel;
+import com.example.tutorfinder.Database.NotificationModel;
 import com.example.tutorfinder.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +38,7 @@ import java.util.HashMap;
 public class ChatActivityStudent extends AppCompatActivity {
 
     FirebaseAuth mAuth;
-    DatabaseReference reference;
+    DatabaseReference reference,reference2;
     FirebaseUser user;
 
     String groupName;
@@ -91,8 +97,8 @@ public class ChatActivityStudent extends AppCompatActivity {
                 else{
                     //send message
                     sendMSG(message);
+                    //addToNotificatioclist();
                 }
-                
             }
         });
 
@@ -141,8 +147,8 @@ public class ChatActivityStudent extends AppCompatActivity {
             @Override
             public void onSuccess(Void aVoid) {
                 //message sent
-                //clear message
                 etvSentMSG.setText("");
+                getParticipants();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -153,6 +159,67 @@ public class ChatActivityStudent extends AppCompatActivity {
         });
 
     }
+
+    //get Paricipants
+    private void getParticipants(){
+
+        Query q1= reference.child(groupName).child("participents");
+
+        q1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for(DataSnapshot ds:snapshot.getChildren()){
+
+                    //get data
+                    String uid =""+ds.child("uid").getValue().toString();
+                    Log.d("Meeeee2"," NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+                    System.out.println("user--- :"+uid);
+                    setnotifications(uid);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    //add notification
+    private void setnotifications(String uid) {
+
+        //store data in firebase
+        String time = ""+System.currentTimeMillis();
+        String message = "New Message from\n "+groupName+" group";
+
+        reference2 = FirebaseDatabase.getInstance().getReference("Student");
+        NotificationModel mm= new NotificationModel(message,time);
+
+        //check if the participant is sender not
+        if(!uid.equals(user.getUid())) {
+
+            reference2.child(uid).child("notifications").child(time).setValue(mm).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    //Added notification
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    //sending message failed
+                    Toast.makeText(ChatActivityStudent.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
+        }
+    }
+
 
     @Override
     public boolean onSupportNavigateUp() {
