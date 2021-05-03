@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -58,66 +57,65 @@
             tools:layout_editor_absoluteY="16dp" />
     </Toolbar>
 
-
-    <EditText
-        android:id="@+id/etvSentMSG"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="48dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="6dp"
-        android:background="@drawable/textview_border"
-        android:ems="10"
-        android:hint="@string/chathint"
-        android:inputType="textPersonName"
-
-        android:textAlignment="center"
-        android:textColorHint="#5E5D5D"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
         app:layout_constraintTop_toBottomOf="@+id/recycleViewmessages"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="685dp">
 
-    <ImageButton
-        android:id="@+id/imgSendMsg"
-        android:layout_width="59dp"
-        android:layout_height="28dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="12dp"
-        android:background="@color/white"
-        android:src="@drawable/ic_sendbtn_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:src="@drawable/ic_attachment_foreground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="52dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/white"
-        android:src="@drawable/ic_attachment_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        <EditText
+            android:id="@+id/etvSentMSG"
+            android:layout_width="322dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
+            android:ems="10"
+            android:hint="@string/chathint"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColorHint="#5E5D5D"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/imgSendMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:src="@drawable/ic_sendbtn_foreground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleViewmessages"
         android:layout_width="0dp"
         android:layout_height="620dp"
-        app:stackFromEnd="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarst"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/row_groupchat_left"
-        tools:ignore="MissingConstraints,UnknownId" />
+        app:stackFromEnd="true"
+        tools:ignore="MissingConstraints,UnknownId"
+        tools:listitem="@layout/row_groupchat_left" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

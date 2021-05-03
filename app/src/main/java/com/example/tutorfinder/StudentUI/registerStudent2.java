@@ -41,6 +41,8 @@ import java.util.regex.Pattern;
 public class registerStudent2 extends AppCompatActivity {
 
     FirebaseDatabase rootNode;
+    FirebaseAuth mAuth;
+    DatabaseReference reference;
 
     DatePickerDialog datePickerDialog;
     Button dateButton;
@@ -49,8 +51,7 @@ public class registerStudent2 extends AppCompatActivity {
     EditText etvPasswordRegister1,etvPasswordRegisterCon1,EmailS;
     Button btnSignUp;
 
-    private FirebaseAuth mAuth;
-    DatabaseReference reference;
+
 
     String Name,Phone,Email,School,NIC,ALStream,DOB,Password;
 
@@ -153,7 +154,7 @@ public class registerStudent2 extends AppCompatActivity {
         String proimg ="";
 
         StudentHelperClass addNewStudent = new StudentHelperClass(Name,Phone,Email,School,NIC,ALStream,DOB,proimg,mAuth.getUid());
-        reference.child(NIC).setValue(addNewStudent).addOnCompleteListener(this, new OnCompleteListener<Void>() {
+        reference.child(mAuth.getUid()).setValue(addNewStudent).addOnCompleteListener(this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()) {

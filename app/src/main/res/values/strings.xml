@@ -15,13 +15,13 @@
     <string name="stdntimg">Student</string>
 
     <string name="register">Sign Up</string>
-    <string name="Fname">Full Name</string>
-    <string name="rphone">Phone Number</string>
-    <string name="remail">Email Address</string>
+    <string name="Fname">Name</string>
+    <string name="rphone">Phone</string>
+    <string name="remail">Email</string>
     <string name="rbirthday">Birth Day</string>
     <string name="rschool">School</string>
     <string name="rNIC">NIC</string>
-    <string name="rstream">A/L Stream</string>
+    <string name="rstream">Select A/L Stream</string>
     <string name="btnregisterNext">Next</string>
 
     <string name="forgottonpassEmail">Enter your Email</string>

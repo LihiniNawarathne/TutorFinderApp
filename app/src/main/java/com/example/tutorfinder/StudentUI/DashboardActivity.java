@@ -35,12 +35,12 @@ public class DashboardActivity extends AppCompatActivity {
         BottomNavigationView navigationViewStudent = findViewById(R.id.bottom_navigation);
         navigationViewStudent.setOnNavigationItemSelectedListener(selectedListener);
 
-
-        actionBar.setTitle("My Profile");//change action title
-        ProfileFragmentStudent fragment3 = new ProfileFragmentStudent();
-        FragmentTransaction fr3 = getSupportFragmentManager().beginTransaction();
-        fr3.replace(R.id.navContent,fragment3,"");
-        fr3.commit();
+        //default action
+        actionBar.setTitle("Notifications");//change action title
+        NotificationFragmentStudent fragment1 = new NotificationFragmentStudent();
+        FragmentTransaction fr1 = getSupportFragmentManager().beginTransaction();
+        fr1.replace(R.id.navContent,fragment1 ,"");
+        fr1.commit() ;
 
     }
 
@@ -54,7 +54,7 @@ public class DashboardActivity extends AppCompatActivity {
 
                         case R.id.nav_notification:
                             //notification fragment transaction
-                            actionBar.setTitle("Notification");//change action title
+                            actionBar.setTitle("Notifications");//change action title
                             NotificationFragmentStudent fragment1 = new NotificationFragmentStudent();
                             FragmentTransaction fr1 = getSupportFragmentManager().beginTransaction();
                             fr1.replace(R.id.navContent,fragment1 ,"");

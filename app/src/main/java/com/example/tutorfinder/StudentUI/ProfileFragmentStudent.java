@@ -129,7 +129,7 @@ public class ProfileFragmentStudent extends Fragment {
             @Override
             public void onClick(View v) {
 
-                reference.child(nic).removeValue();
+                reference.child(user.getUid()).removeValue();
                 user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

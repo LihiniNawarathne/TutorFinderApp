@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="45dp"
         android:text="@string/register"
         android:textColor="@color/SplashScreenBackground"
         android:textSize="36sp"
@@ -26,8 +26,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/rtil1"
-        android:layout_width="315dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/textview_border"
         android:textColorHint="#B9B8B8"
@@ -52,8 +54,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/rtil2"
-        android:layout_width="315dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/textview_border"
         android:textColorHint="#B9B8B8"
@@ -78,8 +82,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/rtil3"
-        android:layout_width="315dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/textview_border"
         android:textColorHint="#B9B8B8"
@@ -104,8 +110,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/rtil4"
-        android:layout_width="315dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/textview_border"
         android:textColorHint="#B9B8B8"
@@ -128,14 +136,17 @@
             tools:layout_editor_absoluteY="292dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/rtil5"
-        android:layout_width="315dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/textview_border"
         android:textColorHint="#B9B8B8"
-        app:layout_constraintBottom_toTopOf="@+id/rtil6"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rtil4">
@@ -154,31 +165,37 @@
             tools:layout_editor_absoluteY="292dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/rtil6"
-        android:layout_width="315dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="40dp"
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="289dp"
+        android:layout_height="33dp"
+        android:gravity="center|left|bottom"
+        android:text="@string/rstream"
+        android:textColor="@color/ScreenBackground"
+        app:layout_constraintBottom_toTopOf="@+id/AlstrmSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rtil5"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/AlstrmSpinner"
+        android:layout_width="305dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="44dp"
+        android:autofillHints="@string/searchSubject"
         android:background="@drawable/textview_border"
-        android:textColorHint="#B9B8B8"
+        android:gravity="center"
+        android:hint="@string/rstream"
+        android:paddingLeft="70dp"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/btnReg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rtil5">
-
-        <EditText
-            android:id="@+id/etv_Alstrm"
-            android:layout_width="300dp"
-            android:layout_height="51dp"
-            android:layout_marginLeft="10dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/rstream"
-            android:inputType="textPersonName"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="292dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnReg"
@@ -186,7 +203,7 @@
         android:layout_width="161dp"
         android:layout_height="0dp"
 
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="17dp"
         android:background="@drawable/textview_border"
         android:backgroundTint="@color/ScreenBackground"
         android:text="@string/btnregisterNext"
@@ -195,7 +212,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rtil6"
+        app:layout_constraintTop_toBottomOf="@+id/AlstrmSpinner"
         tools:ignore="MissingConstraints" />
 
 

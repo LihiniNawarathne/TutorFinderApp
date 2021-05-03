@@ -40,7 +40,7 @@ public class SearchFragmentStudent extends Fragment {
         //set spinner
         List<String> list = new ArrayList<>();
 
-        list.add("Mathemathics");
+        list.add("Mathematics");
         list.add("Commerce");
         list.add("Art");
 

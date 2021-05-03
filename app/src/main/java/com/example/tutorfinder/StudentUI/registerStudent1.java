@@ -9,21 +9,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.tutorfinder.R;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class registerStudent1 extends AppCompatActivity {
 
 
      EditText Fname,phone,remail,schl,NIC,Alstrm;
      Button btn;
-
+     Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -39,26 +43,40 @@ public class registerStudent1 extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-
+        //init view
+        spinner =findViewById(R.id.AlstrmSpinner);
         Fname = findViewById(R.id.etv_Fname);
         phone = findViewById(R.id.etv_phone);
         remail = findViewById(R.id.etv_remail);
         schl = findViewById(R.id.etv_schl);
         NIC = findViewById(R.id.etv_sNIC);
-        Alstrm= findViewById(R.id.etv_Alstrm);
         btn = findViewById(R.id.btnReg);
+
+        //set spinner
+        List<String> list = new ArrayList<>();
+
+        list.add("Mathematics");
+        list.add("Bio");
+        list.add("Commerce");
+        list.add("Art");
+
+        ArrayAdapter<String> dataAdapter =new ArrayAdapter<String>(registerStudent1.this, android.R.layout.simple_spinner_dropdown_item,list);
+        spinner.setAdapter(dataAdapter);
+
 
         //navigate to Student SIgnUp2 page
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                //get spinner value
+                String sAlstrm  = spinner.getSelectedItem().toString();
+
                 String sFname= Fname.getText().toString().trim();
                 String sphone= phone.getText().toString().trim();
                 String sremail= remail.getText().toString().trim();
                 String sschl= schl.getText().toString().trim();
                 String sNIC= NIC.getText().toString().trim();
-                String sAlstrm= Alstrm.getText().toString().trim();
 
 
                 //validate
