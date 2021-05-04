@@ -41,17 +41,24 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
     implementation platform('com.google.firebase:firebase-bom:27.1.0')
     implementation 'com.google.firebase:firebase-auth'
-//noinspection GradleCompatible
+
+    //noinspection GradleCompatible
     implementation 'com.android.support:cardview-v7:28.0.0'
-//noinspection GradleCompatible,GradleCompatible
+    //noinspection GradleCompatible,GradleCompatible
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
+
     //gilde library
     implementation 'com.github.bumptech.glide:glide:4.7.1'
-//circle imageview
+
+    //circle imageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.google.firebase:firebase-core:17.2.2'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+
 }
 
-apply plugin: 'com.google.gms.google-services'

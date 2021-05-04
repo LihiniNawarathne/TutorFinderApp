@@ -8,20 +8,20 @@
     <string name="login_btn">LOGIN</string>
 
     <string name="hyperlinkForgot"><a href="">Forgot your password?Reset here</a></string>
-    <string name="hyperlinkRegister"><a href="">Don't have an account?Register here</a></string>
+    <string name="hyperlinkRegister"><a href="">Don\'t have an account?Register here</a></string>
 
     <string name="selectRole">Are you a Teacher or Student?</string>
     <string name="tutorimg">Tutor</string>
     <string name="stdntimg">Student</string>
 
     <string name="register">Sign Up</string>
-    <string name="Fname">Full Name</string>
-    <string name="rphone">Phone Number</string>
-    <string name="remail">Email Address</string>
+    <string name="Fname">Name</string>
+    <string name="rphone">Phone</string>
+    <string name="remail">Email</string>
     <string name="rbirthday">Birth Day</string>
     <string name="rschool">School</string>
-    <string name="rgrade">Grade</string>
-    <string name="rstream">A/L Stream</string>
+    <string name="rNIC">NIC</string>
+    <string name="rstream">Select A/L Stream</string>
     <string name="btnregisterNext">Next</string>
 
     <string name="forgottonpassEmail">Enter your Email</string>
@@ -55,13 +55,14 @@
     <string name="sALstreamR">A/L Stream</string>
     <string name="seditPro">Edit</string>
     <string name="sdeletePro">Delete</string>
+    <string name="passworMSG">Please fill below spaces if want to Reset your Password</string>
 
 
     <string name="newClass">Join for a Class</string>
     <string name="searchSubject">Enter Subject</string>
     <string name="searchbtn">Search</string>
 
-    <string name="CourseOffers">Special offers for <br /> A/L Students</string>
+    <string name="CourseOffers">Special offers for <br /> A/L Students<br /> (Grade 13)</string>
     <string name="offerMsg1">Select your A/L Stream</string>
     <string name="clickforOffer">Click Here</string>
     <string name="ScienceMathsStream">Science(Maths)</string>
@@ -69,9 +70,9 @@
     <string name="CommerceStream">Commerce</string>
     <string name="ArtStream">Art</string>
 
-    <string name="Subject">Subject</string>
-    <string name="Tutor">Tutor</string>
-    <string name="Time">Time</string>
+    <string name="Subject">Subject :</string>
+    <string name="Tutor">Tutor :</string>
+    <string name="Time">Time :</string>
 
     <string name="SubjectName">Subject Name</string>
     <string name="TutorName">Tutor Name</string>
@@ -85,16 +86,22 @@
     <string name="ClassName">Class Name : Name</string>
     <string name="joinbtn">Join</string>
 
-    <string name="classNameSlip">Enter Class Name</string>
+    <string name="amount">Amount    :</string>
     <string name="slipactivity">Please make your full payment to the<br /> Bank Account : 123456789102 <br /> and Upload a screenshot here</string>
     <string name="sendSlipbtn">Send</string>
 
+    <string name="SearchResults">Search Results</string>
     <string name="SubjectNameResults">Maths</string>
     <string name="ClassNameResults">Class Name    - Maths12A</string>
     <string name="GradeResults">Grade   - 12</string>
     <string name="TimeResults">Time     – Saturday 4.00-5.00PM</string>
     <string name="AmountResults">Amount( for 6 months )     - Rs:5000.00</string>
     <string name="TutorNameResults">Tutor   - P.Perera </string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
     <!--admin pages-->
 
@@ -110,7 +117,6 @@
     <string name="phoneno">Phone no</string>
     <string name="email">Email</string>
     <string name="dob">Date of Birth</string>
-    <string name="subject">Subject</string>
     <string name="degree">Degree</string>
     <string name="qual">Qualifications</string>
 
@@ -125,7 +131,7 @@
     <string name="Grade">Grade</string>
     <string name="classID">ClassID</string>
     <string name="bankSlip">BankSlip</string>
-    <string name="add">Add</string>
+    <string name="add">ADD</string>
 
     <string name="status">Status</string>
     <string name="deg">Degree</string>
@@ -143,4 +149,8 @@
     <string name="btnpay">Payment Details</string>
     <string name="btnRequest">View Request</string>
     <string name="btnStuTotuors">User Details</string>
+    <string name="subject">Subject</string>
+    <string name="time">Time</string>
+    <string name="class_name">Class Name</string>
+
 </resources>

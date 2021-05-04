@@ -10,68 +10,86 @@
     <TextView
         android:id="@+id/tvSlipUpload"
         android:layout_width="302dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="28dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="282dp"
+        android:layout_marginBottom="30dp"
         android:foregroundGravity="center"
         android:text="@string/slipactivity"
         android:textAlignment="center"
         android:textColor="@color/ScreenBackground"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/slipimageButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
-
-    <EditText
-        android:id="@+id/etvSlipUpload"
-        android:layout_width="305dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/textview_border"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSlipUpload" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/slipimageButton"
         android:layout_width="54dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="16dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/etvSlipUpload"
-        app:layout_constraintTop_toTopOf="@+id/etvSlipUpload"
+        app:layout_constraintTop_toBottomOf="@+id/tvSlipUpload"
         app:srcCompat="@drawable/ic_attachment_foreground" />
 
     <Button
         android:id="@+id/btnsendSlip"
         android:layout_width="161dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="48dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="180dp"
         android:background="@drawable/textview_border"
         android:backgroundTint="@color/ScreenBackground"
         android:gravity="center"
         android:text="@string/sendSlipbtn"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etvSlipUpload"
+        app:layout_constraintStart_toStartOf="@+id/etvSlipUpload"
         app:layout_constraintTop_toBottomOf="@+id/etvSlipUpload" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="253dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="87dp"
+        android:id="@+id/etvSlipUpload"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/textview_border"
         android:ems="10"
-        android:hint="@string/classNameSlip"
         android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/btnsendSlip"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSlipUpload" />
+
+    <TextView
+        android:id="@+id/tvclasspaid1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="43dp"
+        android:text="@string/ClassName"
+        android:textColor="@color/SplashScreenBackground"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvpaidAmount1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvpaidAmount1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/amount"
+        android:textColor="@color/SplashScreenBackground"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSlipUpload"
+        app:layout_constraintStart_toStartOf="@+id/tvSlipUpload" />
 </androidx.constraintlayout.widget.ConstraintLayout>
