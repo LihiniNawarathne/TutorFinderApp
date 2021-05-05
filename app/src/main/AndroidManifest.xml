@@ -21,7 +21,7 @@
         <activity android:name=".TutorUI.TutorProfile" />
         <activity android:name=".TutorUI.StudentDetails" />
         <activity android:name=".TutorUI.Selections" />
-        <activity android:name=".TutorUI.CreateClass" />
+        <activity android:name=".TutorUI.CreateClassTutor" />
         <activity android:name=".TutorUI.registerTutor" />
         <activity android:name=".StudentUI.uploadSlipImgStudent" />
         <activity android:name=".StudentUI.selectedOfferStudent" />
