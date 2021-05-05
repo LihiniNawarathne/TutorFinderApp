@@ -79,9 +79,11 @@ public class ChatActivityStudent extends AppCompatActivity {
         //set groupName
         tvGroupNamest.setText(groupName);
 
+        //load previous messages
         loadMessages();
 
 
+        //when click send_image button
         imgSendMsg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +99,8 @@ public class ChatActivityStudent extends AppCompatActivity {
                 else{
                     //send message
                     sendMSG(message);
-                    //addToNotificatioclist();
+                    //show toast message
+                    Toast.makeText(ChatActivityStudent.this, "Sending reply..", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -105,6 +108,7 @@ public class ChatActivityStudent extends AppCompatActivity {
 
     }
 
+    //load previous messages
     private void loadMessages() {
         //init list
         chatList = new ArrayList<>();
@@ -131,6 +135,7 @@ public class ChatActivityStudent extends AppCompatActivity {
         });
     }
 
+    //send message to the chat
     private void sendMSG(String message) {
 
         //timestamp

@@ -40,7 +40,7 @@ public class CourseOffersStudent extends AppCompatActivity {
                 Stream = "Science(Maths)";
 
                 intent = new Intent(CourseOffersStudent.this, selectedOfferStudent.class);
-                intent.putExtra("subject ", Stream );
+                intent.putExtra("Stream", Stream );
                 startActivity(intent);
             }
         });
@@ -52,7 +52,7 @@ public class CourseOffersStudent extends AppCompatActivity {
                 Stream = "Science(Bio)";
 
                 intent = new Intent(CourseOffersStudent.this, selectedOfferStudent.class);
-                intent.putExtra("subject ", Stream );
+                intent.putExtra("Stream", Stream );
                 startActivity(intent);
             }
         });
@@ -64,7 +64,7 @@ public class CourseOffersStudent extends AppCompatActivity {
                 Stream = "Commerce";
 
                 intent = new Intent(CourseOffersStudent.this, selectedOfferStudent.class);
-                intent.putExtra("subject ", Stream );
+                intent.putExtra("Stream", Stream );
                 startActivity(intent);
             }
         });
@@ -76,7 +76,7 @@ public class CourseOffersStudent extends AppCompatActivity {
                 Stream = "Art";
 
                 intent = new Intent(CourseOffersStudent.this, selectedOfferStudent.class);
-                intent.putExtra("subject ", Stream );
+                intent.putExtra("Stream", Stream );
                 startActivity(intent);
             }
         });

@@ -152,7 +152,7 @@ public class LoginActivity extends AppCompatActivity {
                                String uemail = user.getEmail();
                                rootNode =  FirebaseDatabase.getInstance();
                                reference1 = rootNode.getReference("Student");
-                               reference2 = rootNode.getReference("Tutor");
+                               reference2 = rootNode.getReference("Tutors");
 
                                 Query checkUser1 = reference1.orderByChild("email").equalTo(uemail);
 

@@ -27,7 +27,7 @@ public class registerStudent1 extends AppCompatActivity {
 
      EditText Fname,phone,remail,schl,NIC,Alstrm;
      Button btn;
-     Spinner spinner;
+     Spinner Alspinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,7 +44,7 @@ public class registerStudent1 extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         //init view
-        spinner =findViewById(R.id.AlstrmSpinner);
+        Alspinner =findViewById(R.id.AlstrmSpinner);
         Fname = findViewById(R.id.etv_Fname);
         phone = findViewById(R.id.etv_phone);
         remail = findViewById(R.id.etv_remail);
@@ -55,13 +55,13 @@ public class registerStudent1 extends AppCompatActivity {
         //set spinner
         List<String> list = new ArrayList<>();
 
-        list.add("Mathematics");
-        list.add("Bio");
+        list.add("Science(Maths)");
+        list.add("Science(Bio)");
         list.add("Commerce");
         list.add("Art");
 
         ArrayAdapter<String> dataAdapter =new ArrayAdapter<String>(registerStudent1.this, android.R.layout.simple_spinner_dropdown_item,list);
-        spinner.setAdapter(dataAdapter);
+        Alspinner.setAdapter(dataAdapter);
 
 
         //navigate to Student SIgnUp2 page
@@ -70,7 +70,7 @@ public class registerStudent1 extends AppCompatActivity {
             public void onClick(View v) {
 
                 //get spinner value
-                String sAlstrm  = spinner.getSelectedItem().toString();
+                String sAlstrm  = Alspinner.getSelectedItem().toString();
 
                 String sFname= Fname.getText().toString().trim();
                 String sphone= phone.getText().toString().trim();

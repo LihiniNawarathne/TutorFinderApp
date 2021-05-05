@@ -21,7 +21,7 @@
     <string name="rbirthday">Birth Day</string>
     <string name="rschool">School</string>
     <string name="rNIC">NIC</string>
-    <string name="rstream">Select A/L Stream</string>
+    <string name="rstream">A/L Stream</string>
     <string name="btnregisterNext">Next</string>
 
     <string name="forgottonpassEmail">Enter your Email</string>
@@ -81,7 +81,7 @@
     <string name="S2">02).</string>
     <string name="S3">03).</string>
     <string name="TotalOffer">Total Amount(for 6 months) : Amount</string>
-    <string name="TotalOfferMonths">Final Amount : Amount</string>
+    <string name="TotalOfferMonths">Final Amount : </string>
     <string name="CourseOffer">Grab Your Chance</string>
     <string name="ClassName">Class Name : Name</string>
     <string name="joinbtn">Join</string>

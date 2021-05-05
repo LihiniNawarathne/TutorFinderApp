@@ -2,15 +2,17 @@ package com.example.tutorfinder.Database;
 
 public class joinClass {
 
-   String  className,studentNIC,slipIMG;
+   String  className,studentUID,slipIMG,subject,alstream;
    long paidID,payment;
 
-    public joinClass(long paidID, String className, String studentNIC, long payment, String slipIMG) {
+    public joinClass(long paidID, String className, String studentNIC, long payment, String slipIMG,String subject,String alstream) {
         this.paidID = paidID;
         this.className = className;
-        this.studentNIC = studentNIC;
+        this.studentUID = studentNIC;
         this.payment = payment;
         this.slipIMG = slipIMG;
+        this.subject = subject;
+        this.alstream=alstream;
     }
 
     public long getPaidID() {
@@ -29,12 +31,12 @@ public class joinClass {
         this.className = className;
     }
 
-    public String getStudentNIC() {
-        return studentNIC;
+    public String getStudentUID() {
+        return studentUID;
     }
 
-    public void setStudentNIC(String studentNIC) {
-        this.studentNIC = studentNIC;
+    public void setStudentUID(String studentUID) {
+        this.studentUID = studentUID;
     }
 
     public long getPayment() {
@@ -51,5 +53,17 @@ public class joinClass {
 
     public void setSlipIMG(String slipIMG) {
         this.slipIMG = slipIMG;
+    }
+
+    public String getSubject() { return subject; }
+
+    public void setSubject(String subject) {this.subject = subject; }
+
+    public String getAlstream() {
+        return alstream;
+    }
+
+    public void setAlstream(String alstream) {
+        this.alstream = alstream;
     }
 }

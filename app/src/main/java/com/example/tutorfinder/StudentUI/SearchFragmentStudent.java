@@ -56,16 +56,6 @@ public class SearchFragmentStudent extends Fragment {
                 //get spinner value
                 String subjectName  = spinner.getSelectedItem().toString();
 
-//                //send data to FragmentSearchResultsStudent
-//                Bundle bundle = new Bundle();
-//                bundle.putString("subjectName",subjectName.getText().toString() );
-//
-//
-//
-//                FragmentSearchResultsStudent fragmentSearchResultsStudent=new FragmentSearchResultsStudent();
-//                fragmentSearchResultsStudent.setArguments(bundle);
-//                getFragmentManager().beginTransaction().replace(android.R.id.content,fragmentSearchResultsStudent).remove(SearchFragmentStudent.this).commit();
-
 
                 Intent intent = new Intent(getActivity(), searchClass.class);
                 Bundle bundle = new Bundle();
