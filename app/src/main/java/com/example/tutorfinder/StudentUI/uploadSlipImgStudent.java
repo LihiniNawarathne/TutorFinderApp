@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -46,12 +47,13 @@ public class uploadSlipImgStudent extends AppCompatActivity {
     ImageButton paymentSlip;
     Button send;
     long paymentid,paymenyID=0,amount;
-    String NIC,StudentNIC,className;
+    String StudentUID,className,subject,samount,Stream;
     TextView name,payment;
 
     private Uri imageurl;
     String img ="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2015/06/Train-ride-from-Kandy-to-Nuwara-Eliya.jpg";
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,9 +75,10 @@ public class uploadSlipImgStudent extends AppCompatActivity {
         reference1 = rootNode.getReference("joinGroupClass");
         reference2 = rootNode.getReference("Student");
 
-        //get data from searchClass
+        //get data from searchClass by intent
         className = getIntent().getStringExtra("className") ;
-        String samount= getIntent().getStringExtra("amount");
+        samount= getIntent().getStringExtra("amount");
+        subject= getIntent().getStringExtra("subject");
         amount= Long.parseLong(samount);//convert to long
 
         name=findViewById(R.id.tvclasspaid1);
@@ -104,7 +107,7 @@ public class uploadSlipImgStudent extends AppCompatActivity {
                     }
                 });
 
-                //get NIC of Student
+                //get Stream of Student
                 Query checkUser = reference2.orderByChild("email").equalTo(user.getEmail());
 
                 checkUser.addValueEventListener(new ValueEventListener() {
@@ -112,8 +115,8 @@ public class uploadSlipImgStudent extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                         for(DataSnapshot ds:snapshot.getChildren()){
-                            //get data
-                            NIC = "" + ds.child("nic").getValue();
+                            //get student's stream
+                            Stream="" + ds.child("alstream").getValue();
 
                         }
 
@@ -133,20 +136,20 @@ public class uploadSlipImgStudent extends AppCompatActivity {
 
                 Log.e("Message",""+paymentid);
 
-                addToPayments(paymentid,NIC);
+                addToPayments(paymentid);
             }
         });
 
     }
 
 
-    private void addToPayments(long paymentid, String NIC) {
+    private void addToPayments(long paymentid) {
 
-        StudentNIC =NIC;
-        Log.e("Message",""+StudentNIC);
+        StudentUID =user.getUid();
+
         paymenyID = paymentid+1;
 
-        joinClass addNewPayment= new joinClass(paymenyID,className,StudentNIC,amount,img);
+        joinClass addNewPayment= new joinClass(paymenyID,className,StudentUID,amount,img,subject,Stream);
 
         reference1.child(String.valueOf(paymenyID)).setValue(addNewPayment).addOnCompleteListener(this, new OnCompleteListener<Void>() {
             @Override

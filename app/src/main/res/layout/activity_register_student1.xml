@@ -170,7 +170,7 @@
         android:layout_width="289dp"
         android:layout_height="33dp"
         android:gravity="center|left|bottom"
-        android:text="@string/rstream"
+        android:text="@string/offerMsg1"
         android:textColor="@color/ScreenBackground"
         app:layout_constraintBottom_toTopOf="@+id/AlstrmSpinner"
         app:layout_constraintEnd_toEndOf="parent"

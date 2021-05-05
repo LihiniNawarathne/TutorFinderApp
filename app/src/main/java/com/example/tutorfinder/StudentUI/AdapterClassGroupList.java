@@ -72,6 +72,7 @@ public class AdapterClassGroupList extends RecyclerView.Adapter<AdapterClassGrou
                 Intent intent = new Intent(context, uploadSlipImgStudent.class);
                 intent.putExtra("className", className);
                 intent.putExtra("amount", amount);
+                intent.putExtra("subject", subject);
 
                 context.startActivity(intent);
             }
