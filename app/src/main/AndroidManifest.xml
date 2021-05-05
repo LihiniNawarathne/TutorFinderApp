@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tutorfinder">
+    <!-- Add internet permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,33 +13,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorFinder">
 
-        <activity android:name=".TutorUI.TutorProfile"></activity>
+        <activity android:name=".StudentUI.searchClass"></activity>
+        <activity android:name=".StudentUI.UpdateDetailsStudent" />
+        <activity android:name=".MainUI.ForgotPasswordActivity" />
+        <activity android:name=".AdminUI.adminclassPayment"></activity>
+        <activity android:name=".AdminUI.Email" />
+        <activity android:name=".TutorUI.TutorProfile" />
         <activity android:name=".TutorUI.StudentDetails" />
         <activity android:name=".TutorUI.Selections" />
-        <activity android:name=".TutorUI.CreateClass" />
+        <activity android:name=".TutorUI.CreateClassTutor" />
         <activity android:name=".TutorUI.registerTutor" />
-        <activity android:name=".StudentUI.DashboardActivity" />
-
-        <activity android:name=".MainUI.ForgotPasswordActivity"></activity>
-        <activity android:name=".StudentUI.searchClass" />
         <activity android:name=".StudentUI.uploadSlipImgStudent" />
         <activity android:name=".StudentUI.selectedOfferStudent" />
         <activity android:name=".StudentUI.CourseOffersStudent" />
-        <activity android:name=".StudentUI.ChatActivityStudent" />
-        <activity android:name=".StudentUI.DashboardActivity">
-
-        </activity>
-
-        <activity android:name=".StudentUI.resgisterStudent2" />
+        <activity android:name=".StudentUI.ChatActivityStudent"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".StudentUI.DashboardActivity" />
+        <activity android:name=".StudentUI.registerStudent2" />
         <activity android:name=".StudentUI.registerStudent1" />
         <activity android:name=".MainUI.registerUserSelect" />
-        <activity android:name=".MainUI.LoginActivity" />
-        <activity android:name=".MainUI.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainUI.LoginActivity"/>
+        <activity android:name=".MainUI.MainActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".AdminUI.admin_view_tutors" />
+        <activity android:name=".AdminUI.admin_view_students" />
+        <activity android:name=".AdminUI.UserDetail" />
+        <activity android:name=".AdminUI.admin_requestfromtutors" />
+        <activity android:name=".AdminUI.PaymentDetails" />
+        <activity android:name=".AdminUI.Admin_MainActivity">
 
         </activity>
     </application>

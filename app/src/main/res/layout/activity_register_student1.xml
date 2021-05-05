@@ -7,163 +7,212 @@
     android:background="@color/white"
     tools:context=".StudentUI.registerStudent1">
 
-
-    <EditText
-        android:id="@+id/etv_Fname"
-        android:layout_width="347dp"
-        android:layout_height="54dp"
-
-        android:layout_marginTop="20dp"
-        android:background="@drawable/textview_border"
-        android:ems="10"
-        android:hint="@string/Fname"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="#7C7777"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvThemeR"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/etv_phone"
-        android:layout_width="347dp"
-        android:layout_height="54dp"
-
-        android:layout_marginTop="20dp"
-        android:background="@drawable/textview_border"
-        android:ems="10"
-        android:hint="@string/rphone"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColorHint="#7C7777"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etv_Fname"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/etv_remail"
-        android:layout_width="347dp"
-        android:layout_height="54dp"
-
-        android:layout_marginTop="20dp"
-        android:background="@drawable/textview_border"
-        android:ems="10"
-        android:hint="@string/remail"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        android:textColorHint="#7C7777"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etv_phone"
-        tools:ignore="MissingConstraints" />
-
     <TextView
         android:id="@+id/tvThemeR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:layout_marginBottom="45dp"
         android:text="@string/register"
         android:textColor="@color/SplashScreenBackground"
         android:textSize="36sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rtil1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/etv_schl"
-        android:layout_width="347dp"
-        android:layout_height="54dp"
 
-        android:layout_marginTop="20dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rtil1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/textview_border"
-        android:ems="10"
-        android:hint="@string/rschool"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="#7C7777"
+        android:textColorHint="#B9B8B8"
+        app:layout_constraintBottom_toTopOf="@+id/rtil2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etv_remail"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/tvThemeR">
 
-    <EditText
-        android:id="@+id/etv_sgrade"
-        android:layout_width="347dp"
-        android:layout_height="54dp"
+        <EditText
+            android:id="@+id/etv_Fname"
+            android:layout_width="300dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/Fname"
+            android:inputType="textPersonName"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="292dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        android:layout_marginTop="20dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rtil2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/textview_border"
-        android:ems="10"
-        android:hint="@string/rgrade"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="#7C7777"
+        android:textColorHint="#B9B8B8"
+        app:layout_constraintBottom_toTopOf="@+id/rtil3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etv_schl"
+        app:layout_constraintTop_toBottomOf="@+id/rtil1">
+
+        <EditText
+            android:id="@+id/etv_phone"
+            android:layout_width="300dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/rphone"
+            android:inputType="number"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="292dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rtil3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/textview_border"
+        android:textColorHint="#B9B8B8"
+        app:layout_constraintBottom_toTopOf="@+id/rtil4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rtil2">
+
+        <EditText
+            android:id="@+id/etv_remail"
+            android:layout_width="300dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/remail"
+            android:inputType="textEmailAddress"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="292dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rtil4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/textview_border"
+        android:textColorHint="#B9B8B8"
+        app:layout_constraintBottom_toTopOf="@+id/rtil5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rtil3">
+
+        <EditText
+            android:id="@+id/etv_schl"
+            android:layout_width="300dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/rschool"
+            android:inputType="textPersonName"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="292dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rtil5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/textview_border"
+        android:textColorHint="#B9B8B8"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rtil4">
+
+        <EditText
+            android:id="@+id/etv_sNIC"
+            android:layout_width="300dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/rNIC"
+            android:inputType="textPersonName"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="292dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="289dp"
+        android:layout_height="33dp"
+        android:gravity="center|left|bottom"
+        android:text="@string/rstream"
+        android:textColor="@color/ScreenBackground"
+        app:layout_constraintBottom_toTopOf="@+id/AlstrmSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rtil5"
         tools:ignore="MissingConstraints" />
 
-
-    <EditText
-        android:id="@+id/etv_Alstrm"
-        android:layout_width="347dp"
-        android:layout_height="54dp"
-
-        android:layout_marginTop="20dp"
+    <Spinner
+        android:id="@+id/AlstrmSpinner"
+        android:layout_width="305dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="44dp"
+        android:autofillHints="@string/searchSubject"
         android:background="@drawable/textview_border"
-        android:ems="10"
+        android:gravity="center"
         android:hint="@string/rstream"
-        android:inputType="textPersonName"
+        android:paddingLeft="70dp"
+        android:spinnerMode="dropdown"
         android:textAlignment="center"
-        android:textColorHint="#7C7777"
+        app:layout_constraintBottom_toTopOf="@+id/btnReg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etv_sgrade"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/etv_rbirthday"
-        style="?android:spinnerStyle"
-        android:layout_width="347dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/textview_border"
-        android:ems="10"
-        android:foregroundTint="#1C1B1B"
-        android:hint="@string/emailHint"
-        android:inputType="date"
-        android:shadowColor="#AF9393"
-        android:text="@string/rbirthday"
-        android:textAlignment="center"
-        android:textColor="@color/grey"
-        android:textColorHighlight="@color/SplashScreenBackground"
-        android:textColorHint="#ACA7A7"
-        android:textColorLink="#000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etv_Alstrm"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnReg"
 
         android:layout_width="161dp"
-        android:layout_height="54dp"
+        android:layout_height="0dp"
 
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="17dp"
         android:background="@drawable/textview_border"
         android:backgroundTint="@color/ScreenBackground"
         android:text="@string/btnregisterNext"
         android:textColor="@color/white"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etv_rbirthday"
+        app:layout_constraintTop_toBottomOf="@+id/AlstrmSpinner"
         tools:ignore="MissingConstraints" />
 
 

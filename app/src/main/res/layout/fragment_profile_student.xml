@@ -15,17 +15,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="288dp"
+            android:layout_height="238dp"
             android:background="@color/white"
             android:gravity="clip_horizontal|center|clip_vertical|center_horizontal"
             android:orientation="horizontal">
 
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgPropic"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:background="@drawable/textview_border"
                 android:padding="5dp"
                 android:src="@drawable/studentpro"/>
         </LinearLayout>
@@ -34,7 +33,7 @@
             android:id="@+id/llp1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="250dp"
             android:background="@color/white"
             android:gravity="center|clip_vertical|center_horizontal"
             android:orientation="horizontal">
@@ -45,21 +44,25 @@
 
                 <TextView
                     android:id="@+id/tvProname"
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:text="@string/Fname"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="RtlCompat" />
 
                 <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/tvStudentName"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="@string/snameR"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:text=""
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -74,7 +77,7 @@
             android:id="@+id/llp2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="300dp"
             android:background="@color/white"
             android:gravity="center|clip_vertical"
             android:orientation="horizontal">
@@ -89,17 +92,21 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:text="@string/rbirthday"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="RtlCompat" />
 
                 <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/tvSBirthDay"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
-                    android:text="@string/sbirthdayR"
+                    android:gravity="center"
+                    android:text=""
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -113,7 +120,7 @@
             android:id="@+id/llp3"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="350dp"
             android:background="@color/white"
             android:gravity="center"
             android:orientation="horizontal">
@@ -128,17 +135,21 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:text="@string/rphone"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="RtlCompat" />
 
                 <TextView
-                    android:id="@+id/tvPhonepro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/tvSPhonepr"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
-                    android:text="@string/sphoneR"
+                    android:gravity="center"
+                    android:text=""
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -148,48 +159,14 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="450dp"
-            android:background="@color/white"
-            android:gravity="clip_horizontal|center|clip_vertical|center_horizontal"
-            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tvProEmail"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="20dp"
-                    android:layout_weight="1"
-                    android:text="@string/remail"
-                    android:textAlignment="viewStart"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/tvEmailpro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/semailR"
-                    android:textAlignment="center"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
 
 
         <LinearLayout
             android:id="@+id/llp6"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="450dp"
             android:background="@color/white"
             android:gravity="center"
             android:orientation="horizontal">
@@ -204,17 +181,21 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:text="@string/remail"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="RtlCompat" />
 
                 <TextView
-                    android:id="@+id/tvStreamemail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/tvSemail"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="@string/semailR"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:text=""
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -228,7 +209,7 @@
             android:id="@+id/llp4"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="400dp"
             android:background="@color/white"
             android:gravity="center"
             android:orientation="horizontal">
@@ -243,17 +224,21 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:text="@string/rstream"
+                    android:gravity="center"
+                    android:text="@string/sALstreamR"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="RtlCompat" />
 
                 <TextView
                     android:id="@+id/tvStreampro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="@string/sALstreamR"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:text=""
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
