@@ -18,7 +18,7 @@ import com.google.firebase.database.annotations.NotNull;
 
 public class CreateClassTutor extends AppCompatActivity {
 
-    EditText tutorname,classname,subname,grade,time,amount;
+    EditText tutor,className,subject,grade,time,amount;
     Button btn2;
     DatabaseReference reff;
     @Override
@@ -26,9 +26,9 @@ public class CreateClassTutor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_class);
 
-        tutorname=findViewById(R.id.tname);
-        classname=findViewById(R.id.className);
-        subname=findViewById(R.id.sub);
+        tutor=findViewById(R.id.tname);
+        className=findViewById(R.id.className);
+        subject=findViewById(R.id.sub);
         grade=findViewById(R.id.grade);
         time=findViewById(R.id.time);
         amount=findViewById(R.id.amount);
@@ -38,11 +38,11 @@ public class CreateClassTutor extends AppCompatActivity {
 
 
         btn2.setOnClickListener(new View.OnClickListener() {
-            String name=tutorname.getText().toString();
+            String name=tutor.getText().toString();
             @Override
             public void onClick(View v) {
-                CreateClass Cc=new CreateClass(tutorname.getText().toString(),classname.getText().toString(),subname.getText().toString(),grade.getText().toString(),time.getText().toString(),amount.getText().toString());
-                reff.child(classname.getText().toString()).setValue(Cc).addOnCompleteListener(CreateClassTutor.this, new OnCompleteListener<Void>()
+                CreateClass Cc=new CreateClass(tutor.getText().toString(),className.getText().toString(),subject.getText().toString(),grade.getText().toString(),time.getText().toString(),amount.getText().toString());
+                reff.child(className.getText().toString()).setValue(Cc).addOnCompleteListener(CreateClassTutor.this, new OnCompleteListener<Void>()
                 {
                     @Override
                 public void onComplete(@NotNull Task<Void> task){
