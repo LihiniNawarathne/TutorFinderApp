@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Parcelable;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -77,6 +80,7 @@ public class ProfileFragmentStudent extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                //check until required data get
                 for(DataSnapshot ds:snapshot.getChildren()){
 
                     //get data
@@ -129,13 +133,15 @@ public class ProfileFragmentStudent extends Fragment {
             @Override
             public void onClick(View v) {
 
+                //delete student from Student data
                 reference.child(user.getUid()).removeValue();
+
+                //remove user from firebase authentication
                 user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()) {
 
-                            //Log.e("Message",className);
                             Toast.makeText(getActivity(), "User has been deleted Successful", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getActivity(), LoginActivity.class));
                         }
@@ -151,5 +157,27 @@ public class ProfileFragmentStudent extends Fragment {
 
 
         return view;
+    }
+
+    //inflate option menu
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        //inflating menu
+        inflater.inflate(R.menu.menu_main_opt,menu);
+    }
+
+    //handle menu item click
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //get item id
+
+        int id = item.getItemId();
+
+        if(id==R.id.logoutoption){
+            mAuth.signOut();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

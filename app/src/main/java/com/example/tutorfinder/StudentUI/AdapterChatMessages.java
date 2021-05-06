@@ -6,6 +6,7 @@ import android.icu.util.ULocale;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -78,6 +80,7 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
         String message=model.getMessage();
         String sender=model.getSender();
         String timestamp=model.getTimestamp();
+        String messageType=model.getType();
 
         //get Time
         Calendar cal = Calendar.getInstance(Locale.ENGLISH);
@@ -85,13 +88,43 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
         SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy   HH:mm");
         String time = sdf.format(cal.getTime());
 
-
         //set data
-        holder.tvmessage.setText(message);
+        if(messageType.equals("text")){
+          //  holder.tvmessage.setText(message);
+            //text message,hide ImageView and show messageText
+            holder.tvmessage.setVisibility(View.VISIBLE);
+            holder.imgMSG.setVisibility(View.GONE);
+            holder.tvmessage.setText(message);
+        }
+        else {
+            //Image message,hide Text and show Image
+            holder.tvmessage.setVisibility(View.GONE);
+            holder.imgMSG.setVisibility(View.VISIBLE);
+            try {
+                Picasso.get().load(message).placeholder(R.drawable.ic_imag_msg).into(holder.imgMSG);
+            }
+            catch (Exception e){
+                holder.imgMSG.setImageResource(R.drawable.ic_imag_msg);
+            }
+          //  holder.tvmessage.setText("Sent Photoessage");
+        }
+
         holder.tvtime.setText(time);
         
         //set user name
         setSenderName(model,holder);
+
+        holder.imgMSG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context, StudentFullImage.class);
+                intent.putExtra("image", message);
+
+                context.startActivity(intent);
+
+            }
+        });
 
     }
 
@@ -138,6 +171,7 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
     class MyHolder extends RecyclerView.ViewHolder{
 
         TextView tvname ,tvmessage,tvtime;
+        ImageView imgMSG;
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);
@@ -145,6 +179,7 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
             tvname = itemView.findViewById(R.id.tvname);
             tvmessage= itemView.findViewById(R.id.tvmessage);
             tvtime= itemView.findViewById(R.id.tvtime);
+            imgMSG= itemView.findViewById(R.id.imgMSG);
         }
     }
 }

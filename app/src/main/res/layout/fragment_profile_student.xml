@@ -23,8 +23,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgPropic"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:padding="5dp"
                 android:src="@drawable/studentpro"/>
         </LinearLayout>
