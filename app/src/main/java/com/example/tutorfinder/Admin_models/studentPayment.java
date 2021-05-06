@@ -2,7 +2,11 @@ package com.example.tutorfinder.Admin_models;
 
 public class studentPayment {
 
-    String className,slipIMG,studentUID,subject,alstream;
+    String className;
+    String slipIMG;
+    String studentUID;
+    String subject;
+    String alstream;
     long paidID;
     double payment;
 
@@ -78,7 +82,7 @@ public class studentPayment {
         return studentUID;
     }
 
-    public void setStudentUID(String studentNIC) {
+    public void setStudentUID(String studentUID) {
         this.studentUID = studentUID;
     }
 

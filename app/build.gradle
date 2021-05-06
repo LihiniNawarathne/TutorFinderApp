@@ -52,7 +52,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     //gilde library
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
 
     //circle imageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'

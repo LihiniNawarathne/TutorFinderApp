@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="450dp"
+    android:layout_height="405dp"
     android:layout_margin="10dp"
     android:padding="10dp"
     app:cardCornerRadius="10dp"
@@ -11,9 +11,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/tutorrequest_gradient">
+        android:layout_height="414dp"
+        android:background="@drawable/tutorrequest_gradient"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -111,7 +111,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -125,7 +125,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/paystuuid"
+                android:id="@+id/payUid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -133,7 +133,7 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-        </LinearLayout>
+        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -167,8 +167,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnaddclassgroup"
@@ -176,9 +176,9 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/textview_border"
                 android:backgroundTint="@color/purpleBtn"
+                android:paddingTop="7dp"
                 android:text="@string/add"
                 android:textColor="@color/white"
-                android:paddingTop="7dp"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
