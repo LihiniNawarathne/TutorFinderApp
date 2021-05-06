@@ -2,41 +2,41 @@ package com.example.tutorfinder.Database;
 
 public class CreateClass {
 
-    String tutorname,classname,subname,grade,time,amount;
+    String tutor,className,subject,grade,time,amount;
 
 
 
-    public CreateClass(String tutorname, String classname,String subname,String grade,String time,String amount) {
-        this.tutorname = tutorname;
-        this.classname = classname;
-        this.subname= subname;
+    public CreateClass(String tutor, String className,String subject,String grade,String time,String amount) {
+        this.tutor = tutor;
+        this.className = className;
+        this.subject= subject;
         this.grade = grade;
         this.time = time;
         this.amount = amount;
     }
 
     public String getTutorname() {
-        return tutorname;
+        return tutor;
     }
 
-    public void setTutorname(String tutorname) {
-        this.tutorname = tutorname;
+    public void setTutorname(String tutor) {
+        this.tutor = tutor;
     }
 
     public String getClassname() {
-        return classname;
+        return className;
     }
 
-    public void setClassname(String classname) {
-        this.classname = classname;
+    public void setClassname(String className) {
+        this.className = className;
     }
 
     public String getSubname() {
-        return subname;
+        return subject;
     }
 
-    public void setSubname(String subname) {
-        this.subname = subname;
+    public void setSubname(String subject) {
+        this.subject = subject;
     }
 
     public String getGrade() {
