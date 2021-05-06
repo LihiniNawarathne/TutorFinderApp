@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.example.tutorfinder.Admin_adapters.studentpaymentAdapter;
 import com.example.tutorfinder.Admin_models.studentPayment;
 import com.example.tutorfinder.R;
@@ -18,7 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class admin_add_students_to_chat_groups extends AppCompatActivity {
+
+public class admin_add_chatgroup_science extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -30,26 +32,30 @@ public class admin_add_students_to_chat_groups extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_add_students_to_chat_groups);
+        setContentView(R.layout.activity_admin_add_chatgroup_science);
 
-        recyclerView = findViewById(R.id.rvpaymnets);
+        recyclerView = findViewById(R.id.rvscience);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         stupaymentList = new ArrayList<>();
 
         root.addValueEventListener(new ValueEventListener() {
+            //Button add;
             @Override
-
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 stupaymentList.clear();
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     studentPayment studentPay = dataSnapshot.getValue(studentPayment.class);
-                    stupaymentList.add(studentPay);
-                    adapter = new studentpaymentAdapter(stupaymentList, admin_add_students_to_chat_groups.this);
-                    recyclerView.setAdapter(adapter);
+                    if (studentPay.getAlstream().equals("Science(Maths)")) {
+                        stupaymentList.add(studentPay);
+                        adapter = new studentpaymentAdapter(stupaymentList, admin_add_chatgroup_science.this);
+                        recyclerView.setAdapter(adapter);
+
+                    }
                 }
                 adapter.notifyDataSetChanged();
+
             }
 
             @Override

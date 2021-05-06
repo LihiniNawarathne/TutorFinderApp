@@ -27,10 +27,40 @@ public class PaymentDetails extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(PaymentDetails.this,admin_add_students_to_chat_groups.class);
+                Intent i = new Intent(PaymentDetails.this, admin_add_chatgroup_science.class);
                 startActivity(i);
 
-                Toast.makeText(PaymentDetails.this, "welcome", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PaymentDetails.this, "science stream payments", Toast.LENGTH_SHORT).show();
+            }
+        });
+        arts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PaymentDetails.this, admin_add_chatgroup_arts.class);
+                startActivity(i);
+
+                Toast.makeText(PaymentDetails.this, "Art stream payments", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        commerce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PaymentDetails.this, admin_add_chatgroup_commerce.class);
+                startActivity(i);
+
+                Toast.makeText(PaymentDetails.this, "Commerce stream payments", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        tec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PaymentDetails.this, admin_add_chatgroup_tec.class);
+                startActivity(i);
+
+                Toast.makeText(PaymentDetails.this, "Technology stream payments", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
