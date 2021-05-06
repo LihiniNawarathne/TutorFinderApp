@@ -20,12 +20,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tutorfinder.Database.NotificationModel;
 import com.example.tutorfinder.Database.StudentHelperClass;
 import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.MainUI.registerUserSelect;
 import com.example.tutorfinder.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -124,11 +126,10 @@ public class registerStudent2 extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(registerStudent2.this, "Registration is successful", Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(registerStudent2.this, "Please Login with your credentials", Toast.LENGTH_SHORT).show();
-                    //startActivity(new Intent(registerStudent2.this,LoginActivity.class));
 
                     //store student deatils in student table
                     addUser();
+                    setnotifications();
 
                 }
                 else{
@@ -169,6 +170,31 @@ public class registerStudent2 extends AppCompatActivity {
                     Toast.makeText(registerStudent2.this, "Registration is Unsuccessful ", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(registerStudent2.this, registerStudent1.class ));
                 }
+            }
+        });
+
+    }
+
+    //add notification
+    private void setnotifications(){
+
+        //store data in firebase
+        String time = ""+System.currentTimeMillis();
+        String message = "Welcome to TutorFinder \n"+Name+"!";
+
+        NotificationModel mm= new NotificationModel(message,time);
+
+        reference.child(mAuth.getUid()).child("notifications").child(time).setValue(mm).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                //Added notification
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                //sending message failed
+                Toast.makeText(registerStudent2.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

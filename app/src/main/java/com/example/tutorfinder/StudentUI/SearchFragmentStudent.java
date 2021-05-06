@@ -42,7 +42,8 @@ public class SearchFragmentStudent extends Fragment {
 
         list.add("Mathematics");
         list.add("Commerce");
-        list.add("Art");
+        list.add("Sinhala");
+        list.add("Biology");
 
         ArrayAdapter<String> dataAdapter =new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item,list);
         spinner.setAdapter(dataAdapter);

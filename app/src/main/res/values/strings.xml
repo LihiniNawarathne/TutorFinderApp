@@ -83,7 +83,7 @@
     <string name="TotalOffer">Total Amount(for 6 months) : Amount</string>
     <string name="TotalOfferMonths">Final Amount : </string>
     <string name="CourseOffer">Grab Your Chance</string>
-    <string name="ClassName">Class Name : Name</string>
+    <string name="ClassName">Class Name : </string>
     <string name="joinbtn">Join</string>
 
     <string name="amount">Amount    :</string>
@@ -97,7 +97,7 @@
     <string name="TimeResults">Time     – Saturday 4.00-5.00PM</string>
     <string name="AmountResults">Amount( for 6 months )     - Rs:5000.00</string>
     <string name="TutorNameResults">Tutor   - P.Perera </string>
-
+    <string name="LogOut">Logout</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
