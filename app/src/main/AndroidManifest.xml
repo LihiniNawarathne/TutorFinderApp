@@ -30,7 +30,7 @@
         <activity android:name=".StudentUI.selectedOfferStudent" />
         <activity android:name=".StudentUI.CourseOffersStudent" />
         <activity
-            android:name=".StudentUI.ChatActivityStudent"
+            android:name=".StudentUI.StudentChatActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".StudentUI.DashboardActivity" />
         <activity android:name=".StudentUI.registerStudent2" />

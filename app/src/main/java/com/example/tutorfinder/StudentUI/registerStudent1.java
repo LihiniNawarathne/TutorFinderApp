@@ -3,23 +3,18 @@ package com.example.tutorfinder.StudentUI;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.tutorfinder.R;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class registerStudent1 extends AppCompatActivity {
@@ -33,7 +28,7 @@ public class registerStudent1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_student1);
+        setContentView(R.layout.activity_student_register1);
 
         //set action bar
         ActionBar actionBar = getSupportActionBar();
