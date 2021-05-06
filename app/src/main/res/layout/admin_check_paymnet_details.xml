@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="405dp"
+    android:layout_height="415dp"
     android:layout_margin="10dp"
     android:padding="10dp"
     app:cardCornerRadius="10dp"
@@ -162,7 +162,7 @@
         <ImageView
             android:id="@+id/payslip"
             android:layout_width="match_parent"
-            android:layout_height="130dp" />
+            android:layout_height="150dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
