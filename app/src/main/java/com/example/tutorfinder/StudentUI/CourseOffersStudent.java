@@ -4,13 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
@@ -25,7 +25,7 @@ public class CourseOffersStudent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_offers_student);
+        setContentView(R.layout.activity_student_course_offers);
 
         //set action bar
         ActionBar actionBar = getSupportActionBar();
@@ -107,17 +107,11 @@ public class CourseOffersStudent extends AppCompatActivity {
 
         if(id==R.id.logoutoption){
 
-            //progress Dialog
-            ProgressDialog pd = new ProgressDialog(this);
-            pd.setTitle("Please wait");
-            pd.setMessage("Login out..");
-            pd.setCanceledOnTouchOutside(false);
-            pd.show();
-
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(CourseOffersStudent.this, LoginActivity.class);
 
-            pd.dismiss();
+            Toast.makeText(this, "Successfully logged out", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(CourseOffersStudent.this, LoginActivity.class);
 
             startActivity(intent);
         }

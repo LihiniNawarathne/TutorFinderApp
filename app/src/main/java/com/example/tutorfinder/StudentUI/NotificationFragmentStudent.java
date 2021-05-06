@@ -1,6 +1,5 @@
 package com.example.tutorfinder.StudentUI;
 
-import android.app.Notification;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -40,7 +39,7 @@ public class NotificationFragmentStudent extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_notification_student, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_notification, container, false);
 
         //init firebase
         mAuth = FirebaseAuth.getInstance();

@@ -22,7 +22,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,8 +30,6 @@ import com.example.tutorfinder.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -45,8 +42,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
-
-import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -83,7 +78,7 @@ public class UpdateDetailsStudent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_details_student);
+        setContentView(R.layout.activity_student_update_details);
 
         //set action bar
         ActionBar actionBar = getSupportActionBar();
@@ -449,17 +444,11 @@ public class UpdateDetailsStudent extends AppCompatActivity {
 
         if(id==R.id.logoutoption){
 
-            //progress Dialog
-            ProgressDialog pd = new ProgressDialog(this);
-            pd.setTitle("Please wait");
-            pd.setMessage("Login out..");
-            pd.setCanceledOnTouchOutside(false);
-            pd.show();
-
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(UpdateDetailsStudent.this, LoginActivity.class);
 
-            pd.dismiss();
+            Toast.makeText(this, "Successfully logged out", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(UpdateDetailsStudent.this, LoginActivity.class);
 
             startActivity(intent);
         }

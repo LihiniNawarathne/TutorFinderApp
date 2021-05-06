@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,7 +15,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tutorfinder.Database.NotificationModel;
 import com.example.tutorfinder.Database.OfferModel;
 import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
@@ -26,9 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -55,7 +51,7 @@ public class selectedOfferStudent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selected_offer_student);
+        setContentView(R.layout.activity_student_selected_offer);
 
         //set action bar
         ActionBar actionBar = getSupportActionBar();
@@ -201,17 +197,11 @@ public class selectedOfferStudent extends AppCompatActivity {
 
         if(id==R.id.logoutoption){
 
-            //progress Dialog
-            ProgressDialog pd = new ProgressDialog(this);
-            pd.setTitle("Please wait");
-            pd.setMessage("Login out..");
-            pd.setCanceledOnTouchOutside(false);
-            pd.show();
-
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(selectedOfferStudent.this, LoginActivity.class);
 
-            pd.dismiss();
+            Toast.makeText(this, "Successfully logged out", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(selectedOfferStudent.this, LoginActivity.class);
 
             startActivity(intent);
         }

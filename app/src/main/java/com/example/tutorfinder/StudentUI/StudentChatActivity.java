@@ -18,7 +18,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,13 +26,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tutorfinder.Database.ClassHelperClass;
 import com.example.tutorfinder.Database.GroupMessageModel;
 import com.example.tutorfinder.Database.NotificationModel;
 import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
-import com.google.android.gms.auth.api.signin.internal.Storage;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -48,12 +44,11 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ChatActivityStudent extends AppCompatActivity {
+public class StudentChatActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     DatabaseReference reference,reference2;
@@ -85,7 +80,7 @@ public class ChatActivityStudent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_student);
+        setContentView(R.layout.activity_student_chat);
 
         //set action bar
         ActionBar actionBar = getSupportActionBar();
@@ -130,14 +125,14 @@ public class ChatActivityStudent extends AppCompatActivity {
                 //validate message
                 if(message.isEmpty()){
                     //show toast message
-                    Toast.makeText(ChatActivityStudent.this, "Can't send an empty message", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentChatActivity.this, "Can't send an empty message", Toast.LENGTH_SHORT).show();
                     
                 }
                 else{
                     //send message
                     sendMSG(message);
                     //show toast message
-                    Toast.makeText(ChatActivityStudent.this, "Sending reply..", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentChatActivity.this, "Sending reply..", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -242,7 +237,7 @@ public class ChatActivityStudent extends AppCompatActivity {
                     chatList.add(model);
 
                 }
-                adapterchatlist = new AdapterChatMessages(ChatActivityStudent.this,chatList);
+                adapterchatlist = new AdapterChatMessages(StudentChatActivity.this,chatList);
 
                 chats.setAdapter(adapterchatlist);
             }
@@ -278,7 +273,7 @@ public class ChatActivityStudent extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 //sending message failed
-                Toast.makeText(ChatActivityStudent.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(StudentChatActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -334,7 +329,7 @@ public class ChatActivityStudent extends AppCompatActivity {
 
                             pd.dismiss();
                             //sending message failed
-                            Toast.makeText(ChatActivityStudent.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentChatActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -346,7 +341,7 @@ public class ChatActivityStudent extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
 
                 //failed uploading image
-                Toast.makeText(ChatActivityStudent.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(StudentChatActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -403,7 +398,7 @@ public class ChatActivityStudent extends AppCompatActivity {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     //sending message failed
-                    Toast.makeText(ChatActivityStudent.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentChatActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -481,17 +476,11 @@ public class ChatActivityStudent extends AppCompatActivity {
 
         if(id==R.id.logoutoption){
 
-            //progress Dialog
-            ProgressDialog pd = new ProgressDialog(this);
-            pd.setTitle("Please wait");
-            pd.setMessage("Login out..");
-            pd.setCanceledOnTouchOutside(false);
-            pd.show();
-
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(ChatActivityStudent.this, LoginActivity.class);
 
-            pd.dismiss();
+            Toast.makeText(this, "Successfully logged out", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(StudentChatActivity.this, LoginActivity.class);
 
             startActivity(intent);
         }

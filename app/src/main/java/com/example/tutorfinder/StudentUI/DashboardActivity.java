@@ -5,11 +5,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
@@ -27,7 +27,7 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_student_dashboard);
 
         //actionbar and it's title
         actionBar = getSupportActionBar();
@@ -116,19 +116,14 @@ public class DashboardActivity extends AppCompatActivity {
         //get item id
         int id = item.getItemId();
 
+
         if(id==R.id.logoutoption){
 
-            //progress Dialog
-            ProgressDialog pd = new ProgressDialog(this);
-            pd.setTitle("Please wait");
-            pd.setMessage("Login out..");
-            pd.setCanceledOnTouchOutside(false);
-            pd.show();
-
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(DashboardActivity.this, LoginActivity.class);
 
-            pd.dismiss();
+            Toast.makeText(this, "Successfully logged out", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(DashboardActivity.this, LoginActivity.class);
 
             startActivity(intent);
         }

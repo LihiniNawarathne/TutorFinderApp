@@ -6,15 +6,10 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.os.Parcelable;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,7 +51,7 @@ public class ProfileFragmentStudent extends Fragment {
 
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile_student, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_profile, container, false);
 
         //init firebase
         mAuth = FirebaseAuth.getInstance();
@@ -159,25 +154,4 @@ public class ProfileFragmentStudent extends Fragment {
         return view;
     }
 
-    //inflate option menu
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        //inflating menu
-        inflater.inflate(R.menu.menu_main_opt,menu);
-    }
-
-    //handle menu item click
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        //get item id
-
-        int id = item.getItemId();
-
-        if(id==R.id.logoutoption){
-            mAuth.signOut();
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
