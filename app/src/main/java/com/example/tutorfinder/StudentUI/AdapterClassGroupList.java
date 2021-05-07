@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tutorfinder.Database.ClassHelperClass;
+import com.example.tutorfinder.StudentModels.ClassHelperClass;
 import com.example.tutorfinder.R;
 
 import java.util.ArrayList;
@@ -66,8 +66,6 @@ public class AdapterClassGroupList extends RecyclerView.Adapter<AdapterClassGrou
             holder.join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Toast.makeText(context, ""+className, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(context, uploadSlipImgStudent.class);
                 intent.putExtra("className", className);

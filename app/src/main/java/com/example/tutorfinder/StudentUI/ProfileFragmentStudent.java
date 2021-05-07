@@ -1,5 +1,6 @@
 package com.example.tutorfinder.StudentUI;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -128,6 +129,13 @@ public class ProfileFragmentStudent extends Fragment {
             @Override
             public void onClick(View v) {
 
+                //progress Dialog
+                ProgressDialog pd = new ProgressDialog(getContext());
+                pd.setTitle("Please wait");
+                pd.setMessage("Logging in....");
+                pd.setCanceledOnTouchOutside(false);
+                pd.show();
+
                 //delete student from Student data
                 reference.child(user.getUid()).removeValue();
 
@@ -137,11 +145,13 @@ public class ProfileFragmentStudent extends Fragment {
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()) {
 
+                            pd.dismiss();
                             Toast.makeText(getActivity(), "User has been deleted Successful", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getActivity(), LoginActivity.class));
                         }
                         else {
                             //if an unsuccessful registration direct back to registration form with a toast
+                            pd.dismiss();
                             Toast.makeText(getActivity(), "An error occurred", Toast.LENGTH_SHORT).show();
                         }
                     }

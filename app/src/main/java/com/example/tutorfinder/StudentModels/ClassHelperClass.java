@@ -1,14 +1,13 @@
-package com.example.tutorfinder.Database;
+package com.example.tutorfinder.StudentModels;
 
 public class ClassHelperClass {
 
-    String className,subject,Time,Grade,Tutor;
-    long Amount;
+    String className,subject,Time,Grade,Tutor, Amount;
 
     public ClassHelperClass() {
     }
 
-    public ClassHelperClass(String className, String subject, String time, String grade, String tutor, long amount) {
+    public ClassHelperClass(String className, String subject, String time, String grade, String tutor, String amount) {
         this.className = className;
         this.subject = subject;
         Time = time;
@@ -57,11 +56,11 @@ public class ClassHelperClass {
         Tutor = tutor;
     }
 
-    public long getAmount() {
+    public String getAmount() {
         return Amount;
     }
 
-    public void setAmount(long amount) {
+    public void setAmount(String amount) {
         Amount = amount;
     }
 }

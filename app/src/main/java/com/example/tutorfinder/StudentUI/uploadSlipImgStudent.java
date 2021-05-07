@@ -28,8 +28,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tutorfinder.Database.NotificationModel;
-import com.example.tutorfinder.Database.joinClass;
+import com.example.tutorfinder.StudentModels.NotificationModel;
+import com.example.tutorfinder.StudentModels.joinClass;
 import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -172,10 +172,15 @@ public class uploadSlipImgStudent extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
+                    if(etvSlipUploadimg.getDrawable() != null) {
 
-                    Log.e("Message",""+paymentid);
+                        Log.e("Message", "" + paymentid);
 
-                    addToPayments(paymentid);
+                        addToPayments(paymentid);
+                    }
+                    else{
+                        Toast.makeText(uploadSlipImgStudent.this, "Please upload the image of the slip.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
 
@@ -365,6 +370,9 @@ public class uploadSlipImgStudent extends AppCompatActivity {
                         }
                     });
 
+                }
+                else{
+                    Toast.makeText(uploadSlipImgStudent.this, "Please upload the image of the slip.", Toast.LENGTH_SHORT).show();
                 }
 
             }

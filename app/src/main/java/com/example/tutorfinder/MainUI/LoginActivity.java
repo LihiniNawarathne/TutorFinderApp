@@ -3,6 +3,7 @@ package com.example.tutorfinder.MainUI;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -62,10 +63,6 @@ public class LoginActivity extends AppCompatActivity {
         forgot_passwordlink =findViewById(R.id.tvhLink1);
         btnLogin = findViewById(R.id.btnLogin);
 
-
-        loginEmail = lemail.getText().toString().trim();
-        loginPassword =lpassword.getText().toString().trim();
-
         //navigate to myprofile once click the login button
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,25 +72,25 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 //validate
-//                if(!Patterns.EMAIL_ADDRESS.matcher(loginEmail).matches()){
-//                    lemail.setError("Invalid Email");
-//                    lemail.setFocusable(true);
-//                }
-//                else if(loginPassword.length() < 6){
-//                    //set error
-//                    lpassword.setError("Password length should be at least 6 characters");
-//                    lpassword.setFocusable(true);
-//                    //Toast.makeText(registerStudent2.this, "Password too short", Toast.LENGTH_SHORT).show();
-//                }
-//                else{
-//                    Toast.makeText(LoginActivity.this, "Email :"+lemail.getText() , Toast.LENGTH_SHORT).show();
-//                    loginUser(loginEmail,loginPassword);
-//                }
+                if(!email.isEmpty() && !password.isEmpty()) {
 
-                Toast.makeText(LoginActivity.this, "Email :"+email, Toast.LENGTH_SHORT).show();
-                loginUser(email,password);
+                    if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                        lemail.setError("Invalid Email");
+                        lemail.setFocusable(true);
+                    } else if (password.length() < 6) {
+                        //set error
+                        lpassword.setError("Password length should be at least 6 characters");
+                        lpassword.setFocusable(true);
+                        //Toast.makeText(registerStudent2.this, "Password too short", Toast.LENGTH_SHORT).show();
+                    } else {
+                        //check whether the user exist or not
+                        loginUser(email, password);
+                    }
 
-
+                }
+                else{
+                    Toast.makeText(LoginActivity.this, "Fields cannot be empty..", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -109,25 +106,24 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         //navigate to forget password page
+        forgot_passwordlink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                startActivity(new Intent(LoginActivity.this,ForgotPasswordActivity.class ));
+            }
+        });
     }
 
-//    private void checkUserStatus(){
-//        //get current user
-//        FirebaseUser user = mAuth.getCurrentUser();
-//
-//        if(user!=null){
-//
-//        }
-//        else{
-//            //no user signed in
-//            startActivity(new Intent(LoginActivity.this,));
-//        }
-//    }
 
     public void loginUser(String loginEmail, String loginPassword){
 
-
+        //progress Dialog
+        ProgressDialog pd = new ProgressDialog(this);
+        pd.setTitle("Please wait");
+        pd.setMessage("Logging in....");
+        pd.setCanceledOnTouchOutside(false);
+        pd.show();
 
         mAuth.signInWithEmailAndPassword(loginEmail, loginPassword)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -142,9 +138,8 @@ public class LoginActivity extends AppCompatActivity {
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            //Log.w("TAG", "signInWithEmail", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            pd.dismiss();
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
                         }
                         else{
 
@@ -163,8 +158,10 @@ public class LoginActivity extends AppCompatActivity {
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         if(snapshot.exists()){
 
+                                            pd.dismiss();
+
                                             Log.d("TAG","Student Login");
-                                            Toast.makeText(LoginActivity.this, "Student Exists", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(LoginActivity.this, "Welcome Back", Toast.LENGTH_SHORT).show();
                                             startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                                         }
 
@@ -177,12 +174,15 @@ public class LoginActivity extends AppCompatActivity {
                                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                                             if(snapshot.exists()){
 
+                                                                pd.dismiss();
+
                                                                 Log.d("TAG","Tutor Login");
-                                                                Toast.makeText(LoginActivity.this, "Tutor Exists", Toast.LENGTH_SHORT).show();
+                                                                //Toast.makeText(LoginActivity.this, "Welcome Back", Toast.LENGTH_SHORT).show();
                                                                 startActivity(new Intent(LoginActivity.this, CreateClass.class));
                                                             }
 
                                                             else{
+                                                                pd.dismiss();
 
                                                              //else the user is admin
                                                                 Toast.makeText(LoginActivity.this, "Hello Admin", Toast.LENGTH_SHORT).show();
@@ -195,6 +195,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                                         @Override
                                                         public void onCancelled(@NonNull DatabaseError error) {
+                                                            pd.dismiss();
 
                                                         }
                                                     });

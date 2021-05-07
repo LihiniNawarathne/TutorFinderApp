@@ -55,7 +55,7 @@
                 android:gravity="center"
                 android:text="@string/notifTime"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/RnotiColortime"
                 android:textSize="15dp" />
 
         </LinearLayout>

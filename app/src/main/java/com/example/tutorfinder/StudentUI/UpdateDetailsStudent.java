@@ -9,6 +9,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
@@ -20,8 +21,10 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +46,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UpdateDetailsStudent extends AppCompatActivity {
@@ -55,11 +61,12 @@ public class UpdateDetailsStudent extends AppCompatActivity {
 
     //views
     CircleImageView propic,epropic;
-    TextView StudentName,SBirthDay,SPhonepro,Streampro,Semail,eStudentName,eSPhonepro,eStreampro,epass,erepass;
+    TextView StudentName,SBirthDay,SPhonepro,Semail,eStudentName,eSPhonepro,epass,erepass;
+    Spinner Streampro,eStreampro;
     Button editProfile;
     ImageButton imgPropicupload;
 
-    String name,dob,phone,alstream,email,nic,sname,sdob,sphone,sstream,sepass,serepass,proimg;
+    String name,dob,phone,alstream,email,nic,sname,sphone,sstream,sepass,serepass,proimg;
 
     //permission request
     private static final int CAMERA_REQUEST_CODE=1001;
@@ -75,6 +82,7 @@ public class UpdateDetailsStudent extends AppCompatActivity {
 
     Uri img_uri = null;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +94,9 @@ public class UpdateDetailsStudent extends AppCompatActivity {
 
         //enable back button
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        //progress Dialog
+        ProgressDialog pd = new ProgressDialog(UpdateDetailsStudent.this);
 
         //init firebase
         mAuth = FirebaseAuth.getInstance();
@@ -124,8 +135,22 @@ public class UpdateDetailsStudent extends AppCompatActivity {
                     StudentName.setText(name);
                     SBirthDay.setText(dob);
                     SPhonepro.setText(phone);
-                    Streampro.setText(alstream );
+                    //Streampro.setText(alstream);
                     Semail.setText(email);
+
+                    //set spinner
+                    List<String> list = new ArrayList<>();
+
+                    list.add(alstream);
+                    list.add("Science(Maths)");
+                    list.add("Science(Bio)");
+                    list.add("Commerce");
+                    list.add("Art");
+                    list.add("Other");
+
+                    ArrayAdapter<String> dataAdapter =new ArrayAdapter<String>(UpdateDetailsStudent.this, android.R.layout.simple_spinner_dropdown_item,list);
+                    Streampro.setAdapter(dataAdapter);
+
 
                     try {
                         //if image received set it to the image view
@@ -173,27 +198,45 @@ public class UpdateDetailsStudent extends AppCompatActivity {
                 //convert to string
                 sname=eStudentName.getText().toString().trim();
                 sphone=eSPhonepro.getText().toString().trim();
-                sstream=eStreampro.getText().toString().trim();
+                sstream= Streampro.getSelectedItem().toString();
                 sepass=epass.getText().toString().trim();
                 serepass=erepass.getText().toString().trim();
 
-                if(!sname.isEmpty() && !sphone.isEmpty() && !sstream.isEmpty()){
-               //if(nameChanged()||phoneChanged()||streamChanged()||passwordChanged()){
-                   nameChanged();
-                   phoneChanged();
-                   streamChanged();
+                if(!sname.isEmpty() && !sphone.isEmpty()){
 
-                    if(!sepass.isEmpty()  && !serepass.isEmpty()) {
-                        passwordChanged();
-
+                    //validate data
+                    if(!sname.matches("^[a-zA-Z]+(([,. ][a-zA-Z ])?[a-zA-Z]*)*$")){
+                        StudentName.setError("Invalid Name");
+                        StudentName.setFocusable(true);
                     }
-                    else{
-                        Toast.makeText(UpdateDetailsStudent.this, "Details are updated", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(UpdateDetailsStudent.this, DashboardActivity.class));
+                    else  if(!sphone.matches("^0[7-9][0-9]{8}$")) {
+                        SPhonepro.setError("Invalid Name");
+                        SPhonepro.setFocusable(true);
+                    }
+                    else {
+
+                        pd.setTitle("Please wait");
+                        pd.setMessage("Logging in....");
+                        pd.setCanceledOnTouchOutside(false);
+                        pd.show();
+
+                        nameChanged();
+                        phoneChanged();
+                        streamChanged();
+
+                        if (!sepass.isEmpty() || !serepass.isEmpty()) {
+                            passwordChanged();
+
+                        } else {
+
+                            pd.dismiss();
+                            Toast.makeText(UpdateDetailsStudent.this, "Profile details are updated", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(UpdateDetailsStudent.this, DashboardActivity.class));
+                        }
                     }
                }
                 else {
-                    Toast.makeText(UpdateDetailsStudent.this, "Please fill the required places", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateDetailsStudent.this, "Fields cannot be empty", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -205,13 +248,14 @@ public class UpdateDetailsStudent extends AppCompatActivity {
                 if(!name.equals(sname)){
                     reference.child(user.getUid()).child("name").setValue(sname);
                     name = sname;
+
                 }
             }
 
             private void phoneChanged() {
                 if(!phone.equals(sphone)){
-                    reference.child(user.getUid()).child("phone").setValue(sphone);
-                    phone = sphone;
+                      reference.child(user.getUid()).child("phone").setValue(sphone);
+                      phone = sphone;
                 }
             }
 
@@ -224,31 +268,41 @@ public class UpdateDetailsStudent extends AppCompatActivity {
 
             private void passwordChanged() {
 
-                    if(!sepass.isEmpty()  && !serepass.isEmpty()) {//check whether the provided passwords fields are empty or not
-                            if (sepass.equals(serepass)) {
+                    if(!serepass.isEmpty()  && !sepass.isEmpty()) {//check whether the provided passwords fields are empty or not
 
-                                        user.updatePassword(sepass).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                            @Override
-                                            public void onSuccess(Void aVoid) {
-                                                //password updated
-                                                Toast.makeText(UpdateDetailsStudent.this, "Passwords successfully changed", Toast.LENGTH_SHORT).show();
-                                                Toast.makeText(UpdateDetailsStudent.this, "Details are updated", Toast.LENGTH_SHORT).show();
-                                                startActivity(new Intent(UpdateDetailsStudent.this, DashboardActivity.class));
-                                            }
-                                        }).addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(UpdateDetailsStudent.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        if(sepass.length()<6  && erepass.length()<6){//check password length
+                            Toast.makeText(UpdateDetailsStudent.this, "Password length should be at least 6 characters", Toast.LENGTH_SHORT).show();
+                        }
 
-                                            }
-                                        });
+                        else{
 
-                            } else {
-                                Toast.makeText(UpdateDetailsStudent.this, "Passwords should be same", Toast.LENGTH_SHORT).show();
-                            }
+                                if (sepass.equals(serepass)) {//check whetehe the provided password are same or not
+
+                                    user.updatePassword(sepass).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            pd.dismiss();
+
+                                            //password updated
+                                            Toast.makeText(UpdateDetailsStudent.this, "Passwords successfully changed", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(UpdateDetailsStudent.this, "Details are updated", Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(UpdateDetailsStudent.this, DashboardActivity.class));
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(UpdateDetailsStudent.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                        }
+                                    });
+
+                                } else {
+                                    Toast.makeText(UpdateDetailsStudent.this, "Passwords should be same", Toast.LENGTH_SHORT).show();
+                                }
+                        }
                     }
                     else {
-                        Toast.makeText(UpdateDetailsStudent.this, "Passwords should be same", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UpdateDetailsStudent.this, "Please fill both password fields", Toast.LENGTH_SHORT).show();
                     }
                 }
 

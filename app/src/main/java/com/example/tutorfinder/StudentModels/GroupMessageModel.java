@@ -1,4 +1,4 @@
-package com.example.tutorfinder.Database;
+package com.example.tutorfinder.StudentModels;
 
 public class GroupMessageModel {
 
