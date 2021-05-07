@@ -26,8 +26,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tutorfinder.Database.GroupMessageModel;
-import com.example.tutorfinder.Database.NotificationModel;
+import com.example.tutorfinder.StudentModels.GroupMessageModel;
+import com.example.tutorfinder.StudentModels.NotificationModel;
 import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
 import com.google.android.gms.tasks.OnFailureListener;

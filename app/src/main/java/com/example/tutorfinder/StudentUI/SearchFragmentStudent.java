@@ -38,7 +38,7 @@ public class SearchFragmentStudent extends Fragment {
         List<String> list = new ArrayList<>();
 
         list.add("Mathematics");
-        list.add("Commerce");
+        list.add("Economics");
         list.add("Sinhala");
         list.add("Biology");
 

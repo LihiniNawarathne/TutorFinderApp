@@ -11,7 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
 
 import java.util.ArrayList;
@@ -54,6 +56,7 @@ public class registerStudent1 extends AppCompatActivity {
         list.add("Science(Bio)");
         list.add("Commerce");
         list.add("Art");
+        list.add("Other");
 
         ArrayAdapter<String> dataAdapter =new ArrayAdapter<String>(registerStudent1.this, android.R.layout.simple_spinner_dropdown_item,list);
         Alspinner.setAdapter(dataAdapter);
@@ -75,24 +78,42 @@ public class registerStudent1 extends AppCompatActivity {
 
 
                 //validate
-                if(!Patterns.EMAIL_ADDRESS.matcher(sremail).matches()){
-                    remail.setError("Invalid Email");
-                    remail.setFocusable(true);
-                }
-                else if(!Patterns.PHONE.matcher(sphone).matches()){
-                    phone.setError("Invalid Phone");
-                    phone.setFocusable(true);
-                }
-                else {
-                    Intent intent = new Intent(registerStudent1.this, registerStudent2.class);
-                    intent.putExtra("Fname", sFname);
-                    intent.putExtra("phone", sphone);
-                    intent.putExtra("remail", sremail);
-                    intent.putExtra("schl", sschl);
-                    intent.putExtra("NIC", sNIC);
-                    intent.putExtra("Alstrm", sAlstrm);
 
-                    startActivity(intent);
+                if(!sFname.isEmpty() && !sphone.isEmpty() && !sremail.isEmpty() && !sschl.isEmpty() && !sNIC.isEmpty()) {
+                    if (!sFname.matches("^[a-zA-Z]+(([,. ][a-zA-Z ])?[a-zA-Z]*)*$") || sFname.length()<4) {//^[A-Za-z]+$
+                        Fname.setError("Invalid Name");
+                        Fname.setFocusable(true);
+                    }else if (sphone.length() < 10) {
+                        phone.setError("Phone number should be 10 digits");
+                        phone.setFocusable(true);
+                    }else if (!sphone.matches("^0[7-9][0-9]{8}$")) {//!Patterns.PHONE.matcher(sphone).matches()
+                        phone.setError("Invalid Phone");
+                        phone.setFocusable(true);
+                    }
+                    else if (!Patterns.EMAIL_ADDRESS.matcher(sremail).matches()) {
+                        remail.setError("Invalid Email");
+                        remail.setFocusable(true);
+                    }   else if (!sschl.matches("^[a-zA-Z,'.\\s]+$")) {//^[A-Za-z]+$
+                        schl.setError("Invalid School Name");
+                        schl.setFocusable(true);
+                    } else if (!sNIC.matches("^(?:19|20)?\\d{2}[0-9]{10}|[0-9][9|11][X|V]$")) {//^[A-Za-z]+$
+                        NIC.setError("Invalid NIC");
+                        NIC.setFocusable(true);
+                    } else {
+                        Intent intent = new Intent(registerStudent1.this, registerStudent2.class);
+                        intent.putExtra("Fname", sFname);
+                        intent.putExtra("phone", sphone);
+                        intent.putExtra("remail", sremail);
+                        intent.putExtra("schl", sschl);
+                        intent.putExtra("NIC", sNIC);
+                        intent.putExtra("Alstrm", sAlstrm);
+
+                        startActivity(intent);
+                    }
+
+                }
+                else{
+                    Toast.makeText(registerStudent1.this, "Fields cannot be empty..", Toast.LENGTH_SHORT).show();
                 }
             }
         });

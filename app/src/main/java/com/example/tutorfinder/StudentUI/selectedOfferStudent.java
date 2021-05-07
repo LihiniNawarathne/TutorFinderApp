@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tutorfinder.Database.OfferModel;
+import com.example.tutorfinder.StudentModels.OfferModel;
 import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
 import com.google.firebase.auth.FirebaseAuth;

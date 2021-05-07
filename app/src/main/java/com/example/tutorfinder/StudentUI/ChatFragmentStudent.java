@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tutorfinder.Database.ChatHelperClass;
+import com.example.tutorfinder.StudentModels.ChatHelperClass;
 import com.example.tutorfinder.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

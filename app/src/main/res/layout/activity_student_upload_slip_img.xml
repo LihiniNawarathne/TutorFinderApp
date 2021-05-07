@@ -25,8 +25,8 @@
 
     <TextView
         android:id="@+id/tvSlipUpload"
-        android:layout_width="303dp"
-        android:layout_height="100dp"
+        android:layout_width="310dp"
+        android:layout_height="143dp"
         android:layout_marginTop="60dp"
         android:foregroundGravity="center"
         android:text="@string/slipactivity"
@@ -41,7 +41,7 @@
         android:id="@+id/etvSlipUpload"
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/textview_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"

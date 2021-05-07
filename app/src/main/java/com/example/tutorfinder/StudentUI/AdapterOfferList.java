@@ -9,15 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tutorfinder.Database.NotificationModel;
-import com.example.tutorfinder.Database.OfferModel;
+import com.example.tutorfinder.StudentModels.OfferModel;
 import com.example.tutorfinder.R;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 public class AdapterOfferList extends  RecyclerView.Adapter<AdapterOfferList.HolderOffers >{
 

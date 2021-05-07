@@ -1,7 +1,5 @@
 package com.example.tutorfinder.StudentUI;
 
-import android.annotation.SuppressLint;
-import android.app.Notification;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +7,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tutorfinder.Database.GroupMessageModel;
-import com.example.tutorfinder.Database.NotificationModel;
+import com.example.tutorfinder.StudentModels.NotificationModel;
 import com.example.tutorfinder.R;
 
 import java.text.SimpleDateFormat;

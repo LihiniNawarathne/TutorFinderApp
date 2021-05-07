@@ -87,7 +87,8 @@
     <string name="joinbtn">Join</string>
 
     <string name="amount">Amount    :</string>
-    <string name="slipactivity">Please make your full payment to the<br /> Bank Account : 123456789102 <br /> and Upload a screenshot here</string>
+    <string name="slipactivity">Please make your full payment to the<br /> Bank Account : 123456789102 <br /> and Upload a screenshot here.<br/>
+        We will review your details of payment and will added to the class group as soon as possible.</string>
     <string name="sendSlipbtn">Send</string>
 
     <string name="SearchResults">Search Results</string>

@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:id="@+id/llChat1"
-        android:layout_width="406dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/white"
         android:orientation="horizontal"
@@ -21,8 +21,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:background="@color/white"
@@ -31,31 +31,54 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="335dp"
             android:layout_height="match_parent"
             android:background="@drawable/textview_border"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvChatGroupName"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center"
-                android:text="@string/chatgroups"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:layout_height="62dp">
+
+                <TextView
+                    android:id="@+id/tvChatGroupName"
+                    android:layout_width="226dp"
+                    android:layout_height="43dp"
+                    android:gravity="center"
+                    android:text="@string/chatgroups"
+                    android:textAlignment="center"
+                    android:textColor="@color/SplashScreenBackground"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvChatlastMsgtime"
+                    android:layout_width="102dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="9dp"
+                    android:gravity="center"
+                    android:text="@string/time"
+                    android:textAlignment="center"
+                    android:textColor="@color/RnotiColortime"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/tvChatlastMessage"
+                android:layout_width="265dp"
+                android:layout_height="31dp"
+                android:foregroundGravity="center"
                 android:gravity="center"
                 android:text="@string/lastMessage"
                 android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textColor="@color/RnotiColortime"
+                android:textSize="15dp"
+                tools:ignore="RtlCompat" />
 
         </LinearLayout>
 
