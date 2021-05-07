@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,10 +16,9 @@ import android.widget.Toast;
 import com.example.tutorfinder.AdminUI.Admin_MainActivity;
 import com.example.tutorfinder.R;
 import com.example.tutorfinder.StudentUI.DashboardActivity;
-import com.example.tutorfinder.StudentUI.ProfileFragmentStudent;
-import com.example.tutorfinder.StudentUI.registerStudent1;
-import com.example.tutorfinder.StudentUI.registerStudent2;
-import com.example.tutorfinder.TutorUI.CreateClass;
+import com.example.tutorfinder.TutorUI.CreateClassTutor;
+import com.example.tutorfinder.TutorUI.Selections;
+import com.example.tutorfinder.TutorUI.TutorViewDashboard;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -177,8 +174,10 @@ public class LoginActivity extends AppCompatActivity {
                                                                 pd.dismiss();
 
                                                                 Log.d("TAG","Tutor Login");
-                                                                //Toast.makeText(LoginActivity.this, "Welcome Back", Toast.LENGTH_SHORT).show();
-                                                                startActivity(new Intent(LoginActivity.this, CreateClass.class));
+
+                                                                Toast.makeText(LoginActivity.this, "Tutor Exists", Toast.LENGTH_SHORT).show();
+                                                                startActivity(new Intent(LoginActivity.this, CreateClassTutor.class));
+
                                                             }
 
                                                             else{

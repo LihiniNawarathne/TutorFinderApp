@@ -1,10 +1,16 @@
-package com.example.tutorfinder.Admin_models;
+package com.example.tutorfinder.Database;
 
-public class Studnets {
+public class TutorStudentsView {
     String alstream,dob,email,name,nic,phone,proimg,school,uid;
 
-    public Studnets(){}
-    public Studnets(String alstream, String dob, String email, String name, String nic, String phone,String proimg, String school,String uid) {
+
+
+    public TutorStudentsView(){
+
+
+
+    }
+    public TutorStudentsView(String alstream, String dob, String email, String name, String nic, String phone,String proimg, String school,String uid) {
         this.alstream = alstream;
         this.dob = dob;
         this.email = email;
@@ -88,4 +94,3 @@ public class Studnets {
         this.uid = uid;
     }
 }
-

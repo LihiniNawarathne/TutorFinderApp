@@ -3,24 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="495dp"
+    android:layout_height="415dp"
     android:layout_margin="10dp"
     android:padding="10dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="8dp">
 
     <LinearLayout
-        android:layout_width="402dp"
-        android:layout_height="match_parent"
-        android:background="@drawable/color_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="414dp"
+        android:background="@drawable/tutorrequest_gradient"
         android:orientation="vertical">
 
-
-        <ImageView
-            android:id="@+id/rvimgpro"
-            android:layout_width="match_parent"
-            android:layout_height="100dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,17 +23,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" AL stream : "
+                android:text=" Payment ID : "
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/rvalstream"
+                android:id="@+id/payID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="commerce"
+                android:text="1"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -53,17 +47,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" DOB : "
+                android:text=" Stream : "
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/rvdob"
+                android:id="@+id/pstream"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="2002-11-23"
+                android:text="Science"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -77,17 +71,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Email : "
+                android:text=" Class Name : "
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/rvstuemail"
+                android:id="@+id/payclassname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="dil@gmail.com"
+                android:text="Maths 12A"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -101,46 +95,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Name : "
+                android:text=" Payment : "
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/rvsname"
+                android:id="@+id/payment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="dilini vithana"
+                android:text="10000"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" NIC : "
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/rvsnic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="2000378V"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -154,15 +125,15 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/rvuid"
+                android:id="@+id/payUid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="qwer4321"
+                android:text="123456V"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-        </LinearLayout>
+        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -172,47 +143,46 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Phone : "
+                android:text=" Subject : "
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/rvsphone"
+                android:id="@+id/paysubject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="0768654567"
+                android:text="Maths"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/payslip"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" School : "
-                android:textColor="@color/black"
-                android:textSize="20sp"
+            <Button
+                android:id="@+id/btnaddclassgroup"
+                android:layout_width="189dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/textview_border"
+                android:backgroundTint="@color/purpleBtn"
+                android:paddingTop="7dp"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/rvschool"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="SGK"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
         </LinearLayout>
-
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

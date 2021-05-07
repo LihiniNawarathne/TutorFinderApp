@@ -35,6 +35,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.firebase:firebase-database:19.7.0'
+    implementation 'com.firebaseui:firebase-ui-database:6.2.0'
     implementation 'com.google.firebase:firebase-auth:20.0.4'
     implementation 'com.google.firebase:firebase-storage:19.2.2'
     testImplementation 'junit:junit:4.+'
@@ -49,6 +50,10 @@ dependencies {
     //noinspection GradleCompatible,GradleCompatible
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+
+    //gilde library
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
 
     //circle imageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'

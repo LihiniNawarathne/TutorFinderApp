@@ -2,85 +2,92 @@ package com.example.tutorfinder.Admin_models;
 
 public class TutorRequestHandler {
 
-    String NIC,Address,Email,Name,Password,PhoneNo,Subject,Qualifications;
+    String nic,address,email,name,phoneno,subject,qualifications,password;
 
     public TutorRequestHandler(){}
 
-    public TutorRequestHandler(String NIC, String Address, String Email, String Name, String Password, String PhoneNo, String Subject, String Qualifications) {
-        this.NIC = NIC;
-        this.Address = Address;
-        this.Email = Email;
-        this.Name = Name;
-        this.Password = Password;
-        this.PhoneNo = PhoneNo;
-        this.Subject = Subject;
-        this.Qualifications = Qualifications;
+    public TutorRequestHandler(String nic, String address, String email, String name,String password, String phoneno, String subject, String qualifications) {
+        this.nic = nic;
+        this.address = address;
+        this.email = email;
+        this.name = name;
+        this.password = password;
+        this.phoneno = phoneno;
+        this.subject = subject;
+        this.qualifications = qualifications;
+
+    }
+    public TutorRequestHandler(String nic, String address, String email, String name, String phoneno, String subject, String qualifications) {
+        this.nic = nic;
+        this.address = address;
+        this.email = email;
+        this.name = name;
+        this.phoneno = phoneno;
+        this.subject = subject;
+        this.qualifications = qualifications;
     }
 
-
-    public String getNIC() {
-        return NIC;
+    public String getNic() {
+        return nic;
     }
 
-    public void setNIC(String NIC) {
-        this.NIC = NIC;
+    public void setNic(String nic) {
+        this.nic = nic;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
-    public void setAddress(String Address) {
-        this.Address = Address;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPassword() {
-        return Password;
+    public String getphoneno() {
+        return phoneno;
     }
 
-    public void setPassword(String Password) {
-        this.Password = Password;
-    }
-
-    public String getPhoneNo() {
-        return PhoneNo;
-    }
-
-    public void setPhoneNo(String PhoneNo) {
-        this.PhoneNo = PhoneNo;
+    public void setphoneno(String phoneno) {
+        this.phoneno = phoneno;
     }
 
     public String getSubject() {
-        return Subject;
+        return subject;
     }
 
-    public void setSubject(String Subject) {
-        this.Subject = Subject;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getQualifications() {
-        return Qualifications;
+        return qualifications;
     }
 
-    public void setQualifications(String Qualifications) {
-        this.Qualifications = Qualifications;
+    public void setQualifications(String qualifications) {
+        this.qualifications = qualifications;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

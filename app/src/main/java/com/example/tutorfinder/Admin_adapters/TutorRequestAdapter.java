@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,14 +42,23 @@ public class TutorRequestAdapter<context> extends RecyclerView.Adapter<TutorRequ
     @Override
     public void onBindViewHolder(@NonNull tutorRequestViewHolder holder, int position) {
         TutorRequestHandler TutorRequestHandler = rlist.get(position);
-        holder.NIC.setText(TutorRequestHandler.getNIC());
+        holder.NIC.setText(TutorRequestHandler.getNic());
         holder.address.setText(TutorRequestHandler.getAddress());
         holder.email.setText(TutorRequestHandler.getEmail());
         holder.name.setText(TutorRequestHandler.getName());
         holder.password.setText(TutorRequestHandler.getPassword());
-        holder.phoneNo.setText(TutorRequestHandler.getPhoneNo());
+        holder.phoneNo.setText(TutorRequestHandler.getphoneno());
         holder.subject.setText(TutorRequestHandler.getSubject());
         holder.qualifications.setText(TutorRequestHandler.getQualifications());
+
+        holder.btndecline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                rlist.remove(position);
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
@@ -78,7 +88,7 @@ public class TutorRequestAdapter<context> extends RecyclerView.Adapter<TutorRequ
             qualifications = itemView.findViewById(R.id.rvqalific);
             //button accept
             btnAccept = itemView.findViewById(R.id.btnaccept);
-
+            btndecline = itemView.findViewById(R.id.btndecline);
             btnAccept.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -107,14 +117,16 @@ public class TutorRequestAdapter<context> extends RecyclerView.Adapter<TutorRequ
                     TutorRequestHandler tutors = new TutorRequestHandler(NIC.getText().toString(),address.getText().toString(),email.getText().toString(),name.getText().toString(),
                             password.getText().toString(),phoneNo.getText().toString(),subject.getText().toString(),qualifications.getText().toString());
 
-                    ref.child(tutors.getNIC()).setValue(tutors);
+                    ref.child(tutors.getNic()).setValue(tutors);
                     //after cliking the accept button this request form will be deleted in the request tutors table
                     ref = db.getReference("TutorRequest");
-                    ref.child(tutors.getNIC()).removeValue();
+                    ref.child(tutors.getNic()).removeValue();
+
+                    //Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
                 }
             });
             //button decline this button use to when admin decline the request this form also deleted in the table
-            btndecline = itemView.findViewById(R.id.btndecline);
+
             btndecline.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -124,7 +136,7 @@ public class TutorRequestAdapter<context> extends RecyclerView.Adapter<TutorRequ
                     TutorRequestHandler dtutor = new TutorRequestHandler(NIC.getText().toString(),address.getText().toString(),email.getText().toString(),name.getText().toString(),
                             password.getText().toString(),phoneNo.getText().toString(),subject.getText().toString(),qualifications.getText().toString());
 
-                    ref.child(dtutor.getNIC()).removeValue();
+                    ref.child(dtutor.getNic()).removeValue();
                 }
             });
 
