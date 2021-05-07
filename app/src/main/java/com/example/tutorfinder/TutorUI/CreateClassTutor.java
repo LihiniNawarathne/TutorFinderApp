@@ -3,6 +3,7 @@ package com.example.tutorfinder.TutorUI;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,6 +58,8 @@ public class CreateClassTutor extends AppCompatActivity {
                     addChatGroup();
                     Toast.makeText(CreateClassTutor.this, "successful", Toast.LENGTH_SHORT).show();
                     //addChatGroup();
+                    Intent intent = new Intent(CreateClassTutor.this, Selections.class);
+                    startActivity(intent);
                 }
 
 

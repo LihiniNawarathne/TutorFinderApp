@@ -260,7 +260,7 @@
                 android:gravity="center">
 
                 <Button
-                    android:id="@+id/buttoneditPro"
+                    android:id="@+id/buttoncreateclass"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -272,7 +272,7 @@
                     android:textColor="@color/white" />
 
                 <Button
-                    android:id="@+id/buttondeletetPro"
+                    android:id="@+id/buttonviewstu"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"

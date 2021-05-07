@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.tutorfinder.R;
 
 public class Selections extends AppCompatActivity {
-    Button button2,button3;
+    Button button2,button3,button4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,8 @@ public class Selections extends AppCompatActivity {
 
         button2 =  findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.DashBoard);
+
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,5 +43,14 @@ public class Selections extends AppCompatActivity {
             }
         });
 
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Selections.this, TutorViewDashboard.class);
+                startActivity(intent);
+
+                Toast.makeText(Selections.this, "My Student details ", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

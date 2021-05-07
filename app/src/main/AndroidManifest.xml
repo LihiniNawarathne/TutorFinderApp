@@ -15,13 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorFinder">
+        <activity android:name=".TutorUI.TutorViewDashboard"></activity>
+        <activity android:name=".TutorUI.TutorProfileUpdate" />
         <activity android:name=".StudentUI.StudentFullImage"></activity>
         <activity android:name=".StudentUI.searchClass" />
         <activity android:name=".StudentUI.UpdateDetailsStudent" />
         <activity android:name=".MainUI.ForgotPasswordActivity" />
         <activity android:name=".AdminUI.adminclassPayment" />
         <activity android:name=".AdminUI.Email" />
-        <activity android:name=".TutorUI.TutorProfile" />
         <activity android:name=".TutorUI.StudentDetails" />
         <activity android:name=".TutorUI.Selections" />
         <activity android:name=".TutorUI.CreateClassTutor" />
