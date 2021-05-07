@@ -15,7 +15,9 @@ import android.widget.Toast;
 import com.example.tutorfinder.AdminUI.Admin_MainActivity;
 import com.example.tutorfinder.R;
 import com.example.tutorfinder.StudentUI.DashboardActivity;
+import com.example.tutorfinder.TutorUI.CreateClassTutor;
 import com.example.tutorfinder.TutorUI.Selections;
+import com.example.tutorfinder.TutorUI.TutorViewDashboard;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -174,7 +176,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                                                 Log.d("TAG","Tutor Login");
                                                                 Toast.makeText(LoginActivity.this, "Tutor Exists", Toast.LENGTH_SHORT).show();
-                                                                startActivity(new Intent(LoginActivity.this, Selections.class));
+                                                                startActivity(new Intent(LoginActivity.this, CreateClassTutor.class));
                                                             }
 
                                                             else{
