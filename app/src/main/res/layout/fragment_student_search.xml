@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
 
 
@@ -22,6 +23,7 @@
             android:id="@+id/tvJoinClassTheme"
             android:layout_width="match_parent"
             android:layout_height="102dp"
+            android:layout_marginTop="100dp"
             android:gravity="center"
             android:text="@string/newClass"
             android:textColor="@color/ScreenBackground"
@@ -33,11 +35,12 @@
             android:autofillHints="@string/searchSubject"
             android:gravity="center"
             android:textAlignment="center"
-            android:paddingLeft="70dp"
+            android:paddingStart="70dp"
             android:layout_width="300dp"
             android:layout_height="58dp"
             android:spinnerMode="dropdown"
-            android:background="@drawable/textview_border"/>
+            android:background="@drawable/textview_border"
+            tools:ignore="RtlSymmetry" />
 
 
         <ImageView
@@ -46,7 +49,8 @@
             android:layout_height="58dp"
             android:layout_marginStart="-115dp"
             android:layout_marginTop="-59dp"
-            android:src="@drawable/ic_search_foreground" />
+            android:src="@drawable/ic_search_foreground"
+            tools:ignore="ContentDescription,HardcodedText" />
 
         <Button
             android:id="@+id/btnSearchSubject"

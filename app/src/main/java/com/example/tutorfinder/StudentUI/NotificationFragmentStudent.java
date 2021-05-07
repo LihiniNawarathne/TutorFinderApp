@@ -1,6 +1,5 @@
 package com.example.tutorfinder.StudentUI;
 
-import android.app.Notification;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tutorfinder.Database.NotificationModel;
+import com.example.tutorfinder.StudentModels.NotificationModel;
 import com.example.tutorfinder.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,7 +30,6 @@ public class NotificationFragmentStudent extends Fragment {
     ArrayList<NotificationModel> notificationList;
     AdapterNotification adapterNotification;
 
-    FirebaseDatabase rootNode;
     FirebaseAuth mAuth;
     FirebaseUser user;
     DatabaseReference reference;
@@ -40,7 +38,7 @@ public class NotificationFragmentStudent extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_notification_student, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_notification, container, false);
 
         //init firebase
         mAuth = FirebaseAuth.getInstance();

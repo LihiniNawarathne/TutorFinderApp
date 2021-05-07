@@ -11,20 +11,16 @@
     app:cardUseCompatPadding="true"
     app:cardCornerRadius="2dp"
     app:cardMaxElevation="2dp"
-    app:contentPadding="3dp">
+    app:contentPadding="2dp">
 
 
     <LinearLayout
         android:id="@+id/llp1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:background="@color/white"
         android:gravity="center|clip_vertical|center_horizontal"
         android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tvSubjectname7"
@@ -42,7 +38,7 @@
             <TextView
                 android:id="@+id/tvSubject1"
                 android:layout_width="100dp"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="10dp"
                 android:gravity="center"
@@ -52,7 +48,7 @@
                 android:textSize="18sp"
                 tools:ignore="RtlCompat" />
 
-        </LinearLayout>
+
 
 
     </LinearLayout>
@@ -61,15 +57,12 @@
     <LinearLayout
         android:id="@+id/llp2"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
         android:background="@color/white"
         android:gravity="center|clip_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/llp1"
         android:orientation="horizontal">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tvtutor5"
@@ -87,7 +80,7 @@
         <TextView
             android:id="@+id/tvtutor1"
             android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:gravity="center"
@@ -97,22 +90,17 @@
             android:textSize="18sp"
             tools:ignore="RtlCompat" />
 
-    </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/llp3"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="80dp"
         android:background="@color/white"
         android:gravity="center|clip_vertical"
         android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tvtime6"
@@ -130,7 +118,7 @@
             <TextView
                 android:id="@+id/tvtime1"
                 android:layout_width="100dp"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -140,7 +128,43 @@
                 android:textSize="18sp"
                 tools:ignore="RtlCompat" />
 
-        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llp4"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="120dp"
+        android:background="@color/white"
+        android:gravity="center|clip_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvamountoffer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/amount"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/tvofferAmount"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/amount"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="RtlCompat" />
+
 
     </LinearLayout>
 

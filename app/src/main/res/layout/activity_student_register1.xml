@@ -76,6 +76,7 @@
             android:hint="@string/rphone"
             android:inputType="number"
             tools:ignore="MissingConstraints"
+            android:maxLength="10"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="292dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -170,7 +171,7 @@
         android:layout_width="289dp"
         android:layout_height="33dp"
         android:gravity="center|left|bottom"
-        android:text="@string/rstream"
+        android:text="@string/offerMsg1"
         android:textColor="@color/ScreenBackground"
         app:layout_constraintBottom_toTopOf="@+id/AlstrmSpinner"
         app:layout_constraintEnd_toEndOf="parent"

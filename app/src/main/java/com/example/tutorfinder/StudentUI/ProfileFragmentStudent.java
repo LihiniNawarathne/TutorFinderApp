@@ -1,17 +1,16 @@
 package com.example.tutorfinder.StudentUI;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,7 +52,7 @@ public class ProfileFragmentStudent extends Fragment {
 
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile_student, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_profile, container, false);
 
         //init firebase
         mAuth = FirebaseAuth.getInstance();
@@ -77,6 +76,7 @@ public class ProfileFragmentStudent extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                //check until required data get
                 for(DataSnapshot ds:snapshot.getChildren()){
 
                     //get data
@@ -129,18 +129,29 @@ public class ProfileFragmentStudent extends Fragment {
             @Override
             public void onClick(View v) {
 
+                //progress Dialog
+                ProgressDialog pd = new ProgressDialog(getContext());
+                pd.setTitle("Please wait");
+                pd.setMessage("Logging in....");
+                pd.setCanceledOnTouchOutside(false);
+                pd.show();
+
+                //delete student from Student data
                 reference.child(user.getUid()).removeValue();
+
+                //remove user from firebase authentication
                 user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()) {
 
-                            //Log.e("Message",className);
+                            pd.dismiss();
                             Toast.makeText(getActivity(), "User has been deleted Successful", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getActivity(), LoginActivity.class));
                         }
                         else {
                             //if an unsuccessful registration direct back to registration form with a toast
+                            pd.dismiss();
                             Toast.makeText(getActivity(), "An error occurred", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -152,4 +163,5 @@ public class ProfileFragmentStudent extends Fragment {
 
         return view;
     }
+
 }
