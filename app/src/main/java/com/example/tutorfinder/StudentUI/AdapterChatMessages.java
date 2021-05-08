@@ -100,13 +100,15 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
             catch (Exception e){
                 holder.imgMSG.setImageResource(R.drawable.ic_imag_msg);
             }
-          //  holder.tvmessage.setText("Sent Photoessage");
         }
 
         holder.tvtime.setText(time);
+
+        //get side
+        int x = getItemViewType(position);//if right side this will return 1
         
         //set user name
-        setSenderName(model,holder);
+        setSenderName(model,holder,x);
 
         holder.imgMSG.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,27 +125,34 @@ public class AdapterChatMessages extends RecyclerView.Adapter<AdapterChatMessage
     }
 
     //get sender name and set it
-    private void setSenderName(GroupMessageModel model, MyHolder holder) {
+    private void setSenderName(GroupMessageModel model, MyHolder holder,int side) {
 
-        //get info using uid
-        reference = FirebaseDatabase.getInstance().getReference("Student");
+        if(side==1) {
+            holder.tvname.setText(R.string.you);
 
-        reference.orderByChild("uid").equalTo(model.getSender()).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds:snapshot.getChildren()){
-                    name =""+ds.child("name").getValue();
+        }
+        else {
 
-                    holder.tvname.setText(name);
+            //get info using uid
+            reference = FirebaseDatabase.getInstance().getReference("Student");
+
+            reference.orderByChild("uid").equalTo(model.getSender()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        name = "" + ds.child("name").getValue();
+
+                            holder.tvname.setText(name);
+                    }
                 }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
+                }
+            });
 
+        }
     }
 
 

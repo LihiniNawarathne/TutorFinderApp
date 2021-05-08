@@ -21,7 +21,8 @@
         <activity android:name=".MainUI.ForgotPasswordActivity" />
         <activity android:name=".AdminUI.adminclassPayment" />
         <activity android:name=".AdminUI.Email" />
-        <activity android:name=".TutorUI.TutorProfile" />
+        <activity android:name=".TutorUI.TutorViewDashboard" />
+        <activity android:name=".TutorUI.TutorProfileUpdate" />
         <activity android:name=".TutorUI.StudentDetails" />
         <activity android:name=".TutorUI.Selections" />
         <activity android:name=".TutorUI.CreateClassTutor" />
@@ -31,7 +32,7 @@
         <activity android:name=".StudentUI.CourseOffersStudent" />
         <activity
             android:name=".StudentUI.StudentChatActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan|adjustResize"/>
         <activity android:name=".StudentUI.DashboardActivity" />
         <activity android:name=".StudentUI.registerStudent2" />
         <activity android:name=".StudentUI.registerStudent1" />

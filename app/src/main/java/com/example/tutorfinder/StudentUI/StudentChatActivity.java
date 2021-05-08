@@ -21,6 +21,7 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -77,14 +78,17 @@ public class StudentChatActivity extends AppCompatActivity {
 
     Uri img_uri = null;
 
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_chat);
+        setAdjustScreen();
 
         //set action bar
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Search Results");
+        actionBar.setTitle("Chat Group");
 
         //enable back button
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -493,5 +497,11 @@ public class StudentChatActivity extends AppCompatActivity {
         //navigate to previous activity
         onBackPressed();
         return super.onSupportNavigateUp();
+    }
+
+    protected void setAdjustScreen(){
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        /*android:windowSoftInputMode="adjustPan|adjustResize"*/
     }
 }

@@ -101,7 +101,6 @@ public class AdapterChatGroupsList extends RecyclerView.Adapter<AdapterChatGroup
                 @Override
                 public void onClick(View v) {
 
-                    Toast.makeText(context, ""+chatName, Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(context, StudentChatActivity.class);
                     intent.putExtra("chatName", chatName);
