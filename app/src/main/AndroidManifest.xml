@@ -32,7 +32,7 @@
         <activity android:name=".StudentUI.CourseOffersStudent" />
         <activity
             android:name=".StudentUI.StudentChatActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan|adjustResize"/>
         <activity android:name=".StudentUI.DashboardActivity" />
         <activity android:name=".StudentUI.registerStudent2" />
         <activity android:name=".StudentUI.registerStudent1" />

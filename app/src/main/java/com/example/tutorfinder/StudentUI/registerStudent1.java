@@ -96,7 +96,7 @@ public class registerStudent1 extends AppCompatActivity {
                     }   else if (!sschl.matches("^[a-zA-Z,'.\\s]+$")) {//^[A-Za-z]+$
                         schl.setError("Invalid School Name");
                         schl.setFocusable(true);
-                    } else if (!sNIC.matches("^(?:19|20)?\\d{2}[0-9]{10}|[0-9][9|11][X|V]$")) {//^[A-Za-z]+$
+                    } else if (!sNIC.matches("^(?:19|20)?\\d{2}[0-9]{10}|[0-9]{9}[x|X|v|V]$")) {//^[A-Za-z]+$
                         NIC.setError("Invalid NIC");
                         NIC.setFocusable(true);
                     } else {
