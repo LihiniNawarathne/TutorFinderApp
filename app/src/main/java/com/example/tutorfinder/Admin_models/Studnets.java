@@ -88,4 +88,3 @@ public class Studnets {
         this.uid = uid;
     }
 }
-

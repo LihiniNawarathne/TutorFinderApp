@@ -50,7 +50,7 @@ public class admin_add_chatgroup_tec extends AppCompatActivity {
                         recyclerView.setAdapter(adapter);
                     }
                 }
-                adapter.notifyDataSetChanged();
+                //adapter.notifyDataSetChanged();
 
             }
 
