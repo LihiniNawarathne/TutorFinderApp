@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 
 import com.example.tutorfinder.R;
 import com.example.tutorfinder.StudentUI.registerStudent1;
+import com.example.tutorfinder.TutorUI.registerTutor;
 
 public class registerUserSelect extends AppCompatActivity {
     //view
@@ -38,6 +39,14 @@ public class registerUserSelect extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(registerUserSelect.this, registerStudent1.class ));
+            }
+        });
+
+        tutor_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(registerUserSelect.this, registerTutor.class ));
             }
         });
 
