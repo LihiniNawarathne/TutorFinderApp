@@ -21,7 +21,7 @@
     <string name="rbirthday">Birth Day</string>
     <string name="rschool">School</string>
     <string name="rNIC">NIC</string>
-    <string name="rstream">Select A/L Stream</string>
+    <string name="rstream">A/L Stream</string>
     <string name="btnregisterNext">Next</string>
 
     <string name="forgottonpassEmail">Enter your Email</string>
@@ -81,13 +81,14 @@
     <string name="S2">02).</string>
     <string name="S3">03).</string>
     <string name="TotalOffer">Total Amount(for 6 months) : Amount</string>
-    <string name="TotalOfferMonths">Final Amount : Amount</string>
+    <string name="TotalOfferMonths">Final Amount : </string>
     <string name="CourseOffer">Grab Your Chance</string>
-    <string name="ClassName">Class Name : Name</string>
+    <string name="ClassName">Class Name : </string>
     <string name="joinbtn">Join</string>
 
     <string name="amount">Amount    :</string>
-    <string name="slipactivity">Please make your full payment to the<br /> Bank Account : 123456789102 <br /> and Upload a screenshot here</string>
+    <string name="slipactivity">Please make your full payment to the<br /> Bank Account : 123456789102 <br /> and Upload a screenshot here.<br/>
+        We will review your details of payment and will added to the class group as soon as possible.</string>
     <string name="sendSlipbtn">Send</string>
 
     <string name="SearchResults">Search Results</string>
@@ -97,7 +98,7 @@
     <string name="TimeResults">Time     – Saturday 4.00-5.00PM</string>
     <string name="AmountResults">Amount( for 6 months )     - Rs:5000.00</string>
     <string name="TutorNameResults">Tutor   - P.Perera </string>
-
+    <string name="LogOut">Logout</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

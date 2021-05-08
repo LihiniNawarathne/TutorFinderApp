@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:id="@+id/ll1"
-        android:layout_width="406dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="horizontal"
         android:layout_marginTop="5dp"
@@ -20,7 +20,7 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView"
-                android:layout_width="75dp"
+                android:layout_width="70dp"
                 android:layout_height="75dp"
                 android:layout_gravity="center"
                 android:layout_alignParentStart="true"
@@ -55,7 +55,7 @@
                 android:gravity="center"
                 android:text="@string/notifTime"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/RnotiColortime"
                 android:textSize="15dp" />
 
         </LinearLayout>

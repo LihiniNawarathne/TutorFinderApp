@@ -1,14 +1,20 @@
 package com.example.tutorfinder.StudentUI;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class CourseOffersStudent extends AppCompatActivity {
 
@@ -19,7 +25,7 @@ public class CourseOffersStudent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_offers_student);
+        setContentView(R.layout.activity_student_course_offers);
 
         //set action bar
         ActionBar actionBar = getSupportActionBar();
@@ -40,7 +46,7 @@ public class CourseOffersStudent extends AppCompatActivity {
                 Stream = "Science(Maths)";
 
                 intent = new Intent(CourseOffersStudent.this, selectedOfferStudent.class);
-                intent.putExtra("subject ", Stream );
+                intent.putExtra("Stream", Stream );
                 startActivity(intent);
             }
         });
@@ -52,7 +58,7 @@ public class CourseOffersStudent extends AppCompatActivity {
                 Stream = "Science(Bio)";
 
                 intent = new Intent(CourseOffersStudent.this, selectedOfferStudent.class);
-                intent.putExtra("subject ", Stream );
+                intent.putExtra("Stream", Stream );
                 startActivity(intent);
             }
         });
@@ -64,7 +70,7 @@ public class CourseOffersStudent extends AppCompatActivity {
                 Stream = "Commerce";
 
                 intent = new Intent(CourseOffersStudent.this, selectedOfferStudent.class);
-                intent.putExtra("subject ", Stream );
+                intent.putExtra("Stream", Stream );
                 startActivity(intent);
             }
         });
@@ -76,12 +82,41 @@ public class CourseOffersStudent extends AppCompatActivity {
                 Stream = "Art";
 
                 intent = new Intent(CourseOffersStudent.this, selectedOfferStudent.class);
-                intent.putExtra("subject ", Stream );
+                intent.putExtra("Stream", Stream );
                 startActivity(intent);
             }
         });
 
 
+    }
+
+    //inflate option menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //inflating meny
+        getMenuInflater().inflate(R.menu.menu_main_opt,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    //handle menu item click logout option
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //get item id
+        int id = item.getItemId();
+
+        if(id==R.id.logoutoption){
+
+            FirebaseAuth.getInstance().signOut();
+
+            Toast.makeText(this, "Successfully logged out", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(CourseOffersStudent.this, LoginActivity.class);
+
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
