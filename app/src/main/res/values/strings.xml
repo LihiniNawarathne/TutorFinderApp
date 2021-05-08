@@ -244,5 +244,14 @@
     </string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="tutname">Please Enter Email</string>
+    <string name="Invalid_Name">Please Enter Valid Name</string>
+    <string name="Invalid_Email">Enter Valid Email</string>
+    <string name="Invalid_Mobile">Please Enter a Valid Number</string>
+    <string name="Invalid_NIC">Enter Valid NIC</string>
+    <string name="Invalid_Subject">Enter the Subject</string>
+    <string name="Invalid_Password">Enter 6 digit Password</string>
+    <string name="Invalid_Q">Enter qualifications</string>
+    <string name="Invalid_Addrees">Enter the Address</string>
 
 </resources>
