@@ -2,19 +2,19 @@ package com.example.tutorfinder.Admin_models;
 
 public class Tutors {
 
-    public String nic,address,email,name,password,phoneNo,subject,qualifications;
+    public String nic,address,email,name,phoneno,subject,qualifications;
 
 
     public Tutors() {
     }
 
-    public Tutors(String nic, String address, String email, String name, String password, String phoneNo, String subject, String qualifications) {
+    public Tutors(String nic, String address, String email, String name, String phoneno, String subject, String qualifications) {
         this.nic = nic;
         this.address = address;
         this.email = email;
         this.name = name;
-        this.password = password;
-        this.phoneNo = phoneNo;
+        //this.password = password;
+        this.phoneno = phoneno;
         this.subject = subject;
         this.qualifications = qualifications;
     }
@@ -51,20 +51,12 @@ public class Tutors {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPhoneno() {
+        return phoneno;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPhoneNo() {
-        return phoneNo;
-    }
-
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
+    public void setPhoneno(String phoneno) {
+        this.phoneno = phoneno;
     }
 
     public String getSubject() {

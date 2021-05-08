@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
 
-import com.example.tutorfinder.StudentUI.UpdateDetailsStudent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,9 +29,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-
-import static androidx.core.content.ContextCompat.startActivity;
-import static com.google.android.material.internal.ContextUtils.getActivity;
 
 
 public class tutorProfileFragment extends Fragment {
@@ -72,8 +68,8 @@ public class tutorProfileFragment extends Fragment {
         Phonepro= view.findViewById(R.id.tvPhone);
         Qualifications=view.findViewById(R.id.tvQualifications);
         Temail = view.findViewById(R.id.tvTemail);
-        editProfile =view.findViewById(R.id.buttoneditPro);
-        deleteProfile =view.findViewById(R.id.buttondeletetPro);
+        editProfile =view.findViewById(R.id.buttoncreateclass);
+        deleteProfile =view.findViewById(R.id.buttonviewstu);
 
         Query checkUser = reference.orderByChild("email").equalTo(user.getEmail());
         checkUser.addValueEventListener(new ValueEventListener() {

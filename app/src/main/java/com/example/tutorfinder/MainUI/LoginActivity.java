@@ -177,7 +177,10 @@ public class LoginActivity extends AppCompatActivity {
                                                                 Log.d("TAG","Tutor Login");
 
                                                                 Toast.makeText(LoginActivity.this, "Tutor Exists", Toast.LENGTH_SHORT).show();
-                                                                startActivity(new Intent(LoginActivity.this, TutorViewDashboard.class));
+
+
+                                                                startActivity(new Intent(LoginActivity.this, Selections.class));
+
 
                                                             }
 

@@ -355,7 +355,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttoneditPro"
+                android:id="@+id/buttoncreateclass"
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

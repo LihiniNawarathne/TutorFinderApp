@@ -51,7 +51,7 @@ public class admin_add_chatgroup_arts extends AppCompatActivity {
                         recyclerView.setAdapter(adapter);
                     }
                 }
-                adapter.notifyDataSetChanged();
+//                adapter.notifyDataSetChanged();
 
             }
 

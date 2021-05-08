@@ -47,14 +47,14 @@ public class admin_add_chatgroup_science extends AppCompatActivity {
                 stupaymentList.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     studentPayment studentPay = dataSnapshot.getValue(studentPayment.class);
-                    if (studentPay.getAlstream().equals("Science(Maths)")) {
+                    if (studentPay.getAlstream().equals("Science(Maths)") || studentPay.getAlstream().equals("Science(Bio)")) {
                         stupaymentList.add(studentPay);
                         adapter = new studentpaymentAdapter(stupaymentList, admin_add_chatgroup_science.this);
                         recyclerView.setAdapter(adapter);
 
                     }
                 }
-                adapter.notifyDataSetChanged();
+                //adapter.notifyDataSetChanged();
 
             }
 
@@ -64,4 +64,5 @@ public class admin_add_chatgroup_science extends AppCompatActivity {
             }
         });
     }
+
 }

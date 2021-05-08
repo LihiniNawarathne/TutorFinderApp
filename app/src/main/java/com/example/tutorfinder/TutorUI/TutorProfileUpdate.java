@@ -66,7 +66,7 @@ public class TutorProfileUpdate extends AppCompatActivity {
         phone = findViewById(R.id.tvPhone);
         qualifications=findViewById(R.id.tvQualifications);
         email = findViewById(R.id.tvTemail);
-        editProfile =findViewById(R.id.buttoneditPro);
+        editProfile =findViewById(R.id.buttoncreateclass);
 
         Query checkUser = reference.orderByChild("email").equalTo(user.getEmail());
         checkUser.addValueEventListener(new ValueEventListener() {
