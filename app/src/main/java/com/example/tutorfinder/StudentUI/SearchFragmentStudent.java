@@ -5,15 +5,12 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.tutorfinder.R;
 
@@ -30,7 +27,7 @@ public class SearchFragmentStudent extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_search_student, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_search, container, false);
 
 
         btnSearch = view.findViewById(R.id.btnSearchSubject);
@@ -41,8 +38,9 @@ public class SearchFragmentStudent extends Fragment {
         List<String> list = new ArrayList<>();
 
         list.add("Mathematics");
-        list.add("Commerce");
-        list.add("Art");
+        list.add("Economics");
+        list.add("Sinhala");
+        list.add("Biology");
 
         ArrayAdapter<String> dataAdapter =new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item,list);
         spinner.setAdapter(dataAdapter);
@@ -55,16 +53,6 @@ public class SearchFragmentStudent extends Fragment {
 
                 //get spinner value
                 String subjectName  = spinner.getSelectedItem().toString();
-
-//                //send data to FragmentSearchResultsStudent
-//                Bundle bundle = new Bundle();
-//                bundle.putString("subjectName",subjectName.getText().toString() );
-//
-//
-//
-//                FragmentSearchResultsStudent fragmentSearchResultsStudent=new FragmentSearchResultsStudent();
-//                fragmentSearchResultsStudent.setArguments(bundle);
-//                getFragmentManager().beginTransaction().replace(android.R.id.content,fragmentSearchResultsStudent).remove(SearchFragmentStudent.this).commit();
 
 
                 Intent intent = new Intent(getActivity(), searchClass.class);

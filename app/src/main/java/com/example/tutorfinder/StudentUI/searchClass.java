@@ -3,19 +3,20 @@ package com.example.tutorfinder.StudentUI;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.tutorfinder.Database.ClassHelperClass;
+import com.example.tutorfinder.StudentModels.ClassHelperClass;
+import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,7 +36,6 @@ public class searchClass extends AppCompatActivity {
 
     String subject;
     Button join;
-    EditText className,amount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,25 +61,11 @@ public class searchClass extends AppCompatActivity {
         classlist=new ArrayList<>();
         getAllClasses(subject);
 
-//        join.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Toast.makeText(searchClass.this, amount.getText().toString(), Toast.LENGTH_SHORT).show();
-//
-//                Intent intent = new Intent(searchClass.this, uploadSlipImgStudent.class);
-//                intent.putExtra("className", className.getText().toString());
-//                intent.putExtra("amount", amount.getText().toString());
-//
-//                startActivity(intent);
-//            }
-//        });
-
     }
 
     private void getAllClasses(String subject) {
 
-        Toast.makeText(this, "Sub"+subject, Toast.LENGTH_SHORT).show();
+
         reference = FirebaseDatabase.getInstance().getReference("ClassGroups");
 
         Query checkUser = reference.orderByChild("subject").equalTo(subject);
@@ -106,6 +92,36 @@ public class searchClass extends AppCompatActivity {
             }
         });
     }
+
+    //inflate option menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //inflating meny
+        getMenuInflater().inflate(R.menu.menu_main_opt,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    //handle menu item click logout
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //get item id
+        int id = item.getItemId();
+
+        if(id==R.id.logoutoption){
+
+            FirebaseAuth.getInstance().signOut();
+
+            Toast.makeText(this, "Successfully logged out", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(searchClass.this, LoginActivity.class);
+
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     public boolean onSupportNavigateUp() {
         //navigate to previous activity

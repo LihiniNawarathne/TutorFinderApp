@@ -16,7 +16,6 @@
         android:layout_marginStart="5dp"
         android:textColor="@color/design_default_color_primary"
         android:textStyle="bold"
-        android:visibility="gone"
         android:text="Name"/>
 
     <TextView
@@ -27,10 +26,20 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Message"
+        android:visibility="gone"
         android:layout_below="@id/tvname"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         />
+    <ImageView
+        android:id="@+id/imgMSG"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:layout_below="@id/tvname"
+        android:padding="15dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_imag_msg"/>
 
     <TextView
         android:id="@+id/tvtime"
@@ -38,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:text="Time"
-        android:layout_below="@id/tvmessage"
+        android:layout_below="@id/imgMSG"
         android:textSize="12sp"
         />
 

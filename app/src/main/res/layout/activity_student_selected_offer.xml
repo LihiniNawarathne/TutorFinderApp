@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StudentUI.selectedOfferStudent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSelectedOffer"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvoffermsg"
+        tools:listitem="@layout/row_offer" />
+
+    <TextView
+        android:id="@+id/tvoffermsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/CourseOffer"
+        android:textColor="@color/Red"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvClassname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ClassName"
+        android:textColor="@color/ScreenBackground"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvamount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvSelectedOffer" />
+
+
+    <LinearLayout
+        android:id="@+id/lloffer"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toTopOf="@+id/StbtnOfferSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvamount" >
+
+        <TextView
+            android:id="@+id/tvtime6"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/TotalOfferMonths"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/ScreenBackground"
+            android:textSize="18sp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/tvfinalAmount"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textAlignment="viewStart"
+            android:textColor="@color/ScreenBackground"
+            android:textSize="18sp"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvamount"
+        android:layout_width="349dp"
+        android:layout_height="31dp"
+        android:text="@string/TotalOffer"
+        android:textAlignment="center"
+        android:textColor="@color/ScreenBackground"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/lloffer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvClassname" />
+
+    <Button
+        android:id="@+id/StbtnOfferSelect"
+        android:layout_width="159dp"
+        android:layout_height="40dp"
+        android:background="@drawable/textview_border"
+        android:backgroundTint="@color/ScreenBackground"
+        android:text="@string/joinbtn"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lloffer" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
