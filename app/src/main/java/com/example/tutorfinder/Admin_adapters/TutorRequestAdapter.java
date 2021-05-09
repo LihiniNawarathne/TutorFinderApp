@@ -118,6 +118,7 @@ public class TutorRequestAdapter<context> extends RecyclerView.Adapter<TutorRequ
                     public void onClick(DialogInterface dialog, int which) {
                         rlist.remove(position);
                         notifyDataSetChanged();
+
                     }
                 });
                 dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

@@ -130,6 +130,7 @@ public class tutorAdapter<context> extends RecyclerView.Adapter<tutorAdapter.tut
                                     phoneno.getText().toString(),subject.getText().toString(),qualifications.getText().toString());
 
                             ref.child(deleteTutor.getNIC()).removeValue();
+                            Toast.makeText(context, "deleted successfully", Toast.LENGTH_SHORT).show();
                         }
                     });
                     dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
