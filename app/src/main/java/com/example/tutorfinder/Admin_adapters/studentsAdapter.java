@@ -125,6 +125,7 @@ public class studentsAdapter<context> extends RecyclerView.Adapter<studentsAdapt
                                     school.getText().toString(), uid.getText().toString());
 
                             ref.child(stu.getUid()).removeValue();
+                            Toast.makeText(context, "deleted successfully", Toast.LENGTH_SHORT).show();
 
                         }
                     });
