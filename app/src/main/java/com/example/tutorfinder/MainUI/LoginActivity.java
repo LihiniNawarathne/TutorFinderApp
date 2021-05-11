@@ -116,92 +116,85 @@ public class LoginActivity extends AppCompatActivity {
 
     public void loginUser(String loginEmail, String loginPassword){
 
-        //progress Dialog
-        ProgressDialog pd = new ProgressDialog(this);
-        pd.setTitle("Please wait");
-        pd.setMessage("Logging in....");
-        pd.setCanceledOnTouchOutside(false);
-        pd.show();
 
-        mAuth.signInWithEmailAndPassword(loginEmail, loginPassword)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+            //progress Dialog
+            ProgressDialog pd = new ProgressDialog(this);
+            pd.setTitle("Please wait");
+            pd.setMessage("Logging in....");
+            pd.setCanceledOnTouchOutside(false);
+            pd.show();
+
+            mAuth.signInWithEmailAndPassword(loginEmail, loginPassword)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
 
 
+                            Log.d("TAG", "signInWithEmail:onComplete:" + task.isSuccessful());
 
-                        Log.d("TAG", "signInWithEmail:onComplete:" + task.isSuccessful());
+                            // If sign in fails, display a message to the user. If sign in succeeds
+                            if (!task.isSuccessful()) {
+                                pd.dismiss();
+                                Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                            } else {
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            pd.dismiss();
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
-                        }
-                        else{
-
-                               user = mAuth.getCurrentUser();
-                               String uemail = user.getEmail();
-                               rootNode =  FirebaseDatabase.getInstance();
-                               reference1 = rootNode.getReference("Student");
-                               reference2 = rootNode.getReference("Tutors");
+                                user = mAuth.getCurrentUser();
+                                String uemail = user.getEmail();
+                                rootNode = FirebaseDatabase.getInstance();
+                                reference1 = rootNode.getReference("Student");
+                                reference2 = rootNode.getReference("Tutors");
 
                                 Query checkUser1 = reference1.orderByChild("email").equalTo(uemail);
 
-                             //check user role
+                                //check user role
                                 //if user is student
                                 checkUser1.addValueEventListener(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        if(snapshot.exists()){
+                                        if (snapshot.exists()) {
 
                                             pd.dismiss();
 
-                                            Log.d("TAG","Student Login");
+                                            Log.d("TAG", "Student Login");
                                             Toast.makeText(LoginActivity.this, "Welcome Back", Toast.LENGTH_SHORT).show();
                                             startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
-                                        }
+                                        } else {
+                                            //if user is tutor
+                                            Query checkUser2 = reference2.orderByChild("email").equalTo(uemail);
 
-                                        else{
-                                                //if user is tutor
-                                                    Query checkUser2 = reference2.orderByChild("email").equalTo(uemail);
+                                            checkUser2.addValueEventListener(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                    if (snapshot.exists()) {
 
-                                                    checkUser2.addValueEventListener(new ValueEventListener() {
-                                                        @Override
-                                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                            if(snapshot.exists()){
+                                                        pd.dismiss();
 
-                                                                pd.dismiss();
+                                                        Log.d("TAG", "Tutor Login");
 
-                                                                Log.d("TAG","Tutor Login");
-
-                                                                Toast.makeText(LoginActivity.this, "Tutor Exists", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(LoginActivity.this, "Tutor Exists", Toast.LENGTH_SHORT).show();
 
 
-                                                                startActivity(new Intent(LoginActivity.this, Selections.class));
+                                                        startActivity(new Intent(LoginActivity.this, Selections.class));
 
 
-                                                            }
+                                                    } else if(uemail.matches("(.*)admin(.*)")){
+                                                        pd.dismiss();
 
-                                                            else{
-                                                                pd.dismiss();
-
-                                                             //else the user is admin
-                                                                Toast.makeText(LoginActivity.this, "Hello Admin", Toast.LENGTH_SHORT).show();
-                                                                startActivity(new Intent(LoginActivity.this, Admin_MainActivity.class));
+                                                        //else the user is admin
+                                                        Toast.makeText(LoginActivity.this, "Hello Admin", Toast.LENGTH_SHORT).show();
+                                                        startActivity(new Intent(LoginActivity.this, Admin_MainActivity.class));
 
 
-                                                            }
+                                                    }
 
-                                                        }
+                                                }
 
-                                                        @Override
-                                                        public void onCancelled(@NonNull DatabaseError error) {
-                                                            pd.dismiss();
+                                                @Override
+                                                public void onCancelled(@NonNull DatabaseError error) {
+                                                    pd.dismiss();
 
-                                                        }
-                                                    });
+                                                }
+                                            });
                                         }
 
                                     }
@@ -221,20 +214,20 @@ public class LoginActivity extends AppCompatActivity {
 //                            }
 
 
-
 //                            Toast.makeText(LoginActivity.this, "User Exists", Toast.LENGTH_SHORT).show();
 //                            startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
 
+                            }
                         }
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                //get and show the error
-                Toast.makeText(LoginActivity.this,e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    //get and show the error
+                    Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
-            }
-        });
+                }
+            });
+
 
     }
 

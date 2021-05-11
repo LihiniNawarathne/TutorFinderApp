@@ -210,7 +210,7 @@ public class UpdateDetailsStudent extends AppCompatActivity {
                         StudentName.setFocusable(true);
                     }
                     else  if(!sphone.matches("^0[7-9][0-9]{8}$")) {
-                        SPhonepro.setError("Invalid Name");
+                        SPhonepro.setError("Invalid Number");
                         SPhonepro.setFocusable(true);
                     }
                     else {

@@ -1,6 +1,8 @@
 package com.example.tutorfinder.StudentUI;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,6 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tutorfinder.Admin_models.Studnets;
 import com.example.tutorfinder.MainUI.LoginActivity;
 import com.example.tutorfinder.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -129,34 +132,51 @@ public class ProfileFragmentStudent extends Fragment {
             @Override
             public void onClick(View v) {
 
-                //progress Dialog
-                ProgressDialog pd = new ProgressDialog(getContext());
-                pd.setTitle("Please wait");
-                pd.setMessage("Logging in....");
-                pd.setCanceledOnTouchOutside(false);
-                pd.show();
 
-                //delete student from Student data
-                reference.child(user.getUid()).removeValue();
-
-                //remove user from firebase authentication
-                user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+                dialog.setTitle("Are you sure?");
+                dialog.setMessage("You want to delete your account?");
+                dialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()) {
+                    public void onClick(DialogInterface dialog, int which) {
 
-                            pd.dismiss();
-                            Toast.makeText(getActivity(), "User has been deleted Successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getActivity(), LoginActivity.class));
-                        }
-                        else {
-                            //if an unsuccessful registration direct back to registration form with a toast
-                            pd.dismiss();
-                            Toast.makeText(getActivity(), "An error occurred", Toast.LENGTH_SHORT).show();
-                        }
+                        //remove user from firebase authentication
+                        user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(task.isSuccessful()) {
+
+                                    //progress Dialog
+                                    ProgressDialog pd = new ProgressDialog(getContext());
+                                    pd.setMessage("Please wait");
+                                    pd.setCanceledOnTouchOutside(false);
+                                    pd.show();
+
+                                    //delete student from Student table
+                                    reference.child(user.getUid()).removeValue();
+
+                                    pd.dismiss();
+                                    Toast.makeText(getActivity(), "Your account has been deleted Successful", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                                }
+                                else {
+                                    //if an unsuccessful registration direct back to registration form with a toast
+
+                                    Toast.makeText(getActivity(), "An error occurred", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
                     }
                 });
-
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                AlertDialog alertDialog = dialog.create();
+                alertDialog.show();
             }
         });
 

@@ -4,7 +4,9 @@ public class ChatHelperClass {
 
     String groupTitle,participents;
 
-    public ChatHelperClass() {}
+    public ChatHelperClass() {
+    }
+
 
     public ChatHelperClass(String groupTitle, String participents) {
         this.groupTitle = groupTitle;
@@ -19,11 +21,5 @@ public class ChatHelperClass {
         this.groupTitle = groupTitle;
     }
 
-//    public String getParticipents() {
-//        return participents;
-//    }
-//
-//    public void setParticipents(String participents) {
-//        this.participents = participents;
-//    }
+
 }
