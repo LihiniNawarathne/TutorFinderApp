@@ -134,8 +134,6 @@ public class selectedOfferStudent extends AppCompatActivity {
     }
 
     private void getAmount() {
-
-        //Query subjectStream = reference.child(Stream).orderByChild("Subject1");
         reference.child(Stream).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -146,12 +144,10 @@ public class selectedOfferStudent extends AppCompatActivity {
                     amount= ""+ds.child("amount").getValue();
 
                     amount1 = amount1 +Long.valueOf(amount);
-
                 }
                 //invoke getFinalAmount(amount1) to calculate the final amount
                 getFinalAmount(amount1);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -164,19 +160,14 @@ public class selectedOfferStudent extends AppCompatActivity {
     private void getFinalAmount(long amount1) {
         FullAmount =amount1;
         System.out.println("Full  "+FullAmount);
-
         //set Class name
         tvClassname.setText("Class Name :"+Stream);
-
         //set ToatlAmount
         tvamount.setText("Toatl Amount(For 6 months) :"+FullAmount);
-
         //getFinalAmount
         finalAmount = (long) (FullAmount * 0.8);
-
         //setFinalAMount
         tvfinalAmount.setText("  "+finalAmount);
-
 
     }
 
